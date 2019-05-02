@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1AADD9C7-956E-4060-B0CC-E0AC44E5CED1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\Account_Type.cs" />
+    <Compile Include="Database\Account_Type_TEMP.cs" />
+    <Compile Include="Database\AllowanceType.cs" />
+    <Compile Include="Database\AllowanceType_TEMP.cs" />
+    <Compile Include="Database\Arm.cs" />
+    <Compile Include="Database\Arms_TEMP.cs" />
+    <Compile Include="Database\Attendance_Staff.cs" />
+    <Compile Include="Database\Attendance_Staff_TEMP.cs" />
+    <Compile Include="Database\Attendance_Student.cs" />
+    <Compile Include="Database\Attendance_Student_TEMP.cs" />
+    <Compile Include="Database\Blood_Group.cs" />
+    <Compile Include="Database\Blood_Group_TEMP.cs" />
+    <Compile Include="Database\Campu.cs" />
+    <Compile Include="Database\Campus_TEMP.cs" />
+    <Compile Include="Database\Class.cs" />
+    <Compile Include="Database\ClassFeePayItem.cs" />
+    <Compile Include="Database\Class_TEMP.cs" />
+    <Compile Include="Database\ClientProfile.cs" />
+    <Compile Include="Database\ClientProfile_TEMP.cs" />
+    <Compile Include="Database\Club.cs" />
+    <Compile Include="Database\Clubs_TEMP.cs" />
+    <Compile Include="Database\Club_Membership.cs" />
+    <Compile Include="Database\Club_Membership_TEMP.cs" />
+    <Compile Include="Database\Club_Officers.cs" />
+    <Compile Include="Database\club_officers_TEMP.cs" />
+    <Compile Include="Database\Country.cs" />
+    <Compile Include="Database\Country_temp.cs" />
+    <Compile Include="Database\Currency.cs" />
+    <Compile Include="Database\Currency_TEMP.cs" />
+    <Compile Include="Database\C_MenuControl.cs" />
+    <Compile Include="Database\C_MenuControl_TEMP.cs" />
+    <Compile Include="Database\C_RolePrivilege.cs" />
+    <Compile Include="Database\C_RolePrivilege_TEMP.cs" />
+    <Compile Include="Database\Day_Table.cs" />
+    <Compile Include="Database\Day_Table_TEMP.cs" />
+    <Compile Include="Database\DBAudit.cs" />
+    <Compile Include="Database\DBAudit_TEMP.cs" />
+    <Compile Include="Database\Deduction.cs" />
+    <Compile Include="Database\Deduction_TEMP.cs" />
+    <Compile Include="Database\Department.cs" />
+    <Compile Include="Database\Department_TEMP.cs" />
+    <Compile Include="Database\Designation.cs" />
+    <Compile Include="Database\Designation_TEMP.cs" />
+    <Compile Include="Database\Division.cs" />
+    <Compile Include="Database\Division_TEMP.cs" />
+    <Compile Include="Database\Entity.cs" />
+    <Compile Include="Database\Event.cs" />
+    <Compile Include="Database\events_TEMP.cs" />
+    <Compile Include="Database\Exam_Type.cs" />
+    <Compile Include="Database\Exam_Type_TEMP.cs" />
+    <Compile Include="Database\Food_Timetable.cs" />
+    <Compile Include="Database\Food_Timetable_TEMP.cs" />
+    <Compile Include="Database\Gender.cs" />
+    <Compile Include="Database\gender_TEMP.cs" />
+    <Compile Include="Database\Glclass1.cs" />
+    <Compile Include="Database\Glclass2.cs" />
+    <Compile Include="Database\Glclass3.cs" />
+    <Compile Include="Database\GLTree.cs" />
+    <Compile Include="Database\Grading.cs" />
+    <Compile Include="Database\Grading_TEMP.cs" />
+    <Compile Include="Database\Hall.cs" />
+    <Compile Include="Database\Halls_TEMP.cs" />
+    <Compile Include="Database\LeaveSetup.cs" />
+    <Compile Include="Database\LeaveSetup_TEMP.cs" />
+    <Compile Include="Database\LeaveType.cs" />
+    <Compile Include="Database\LeaveType_TEMP.cs" />
+    <Compile Include="Database\LevelSetup.cs" />
+    <Compile Include="Database\LevelSetup_TEMP.cs" />
+    <Compile Include="Database\LGA.cs" />
+    <Compile Include="Database\LGA_TEMP.cs" />
+    <Compile Include="Database\LoginAudit.cs" />
+    <Compile Include="Database\LoginAudit_TEMP.cs" />
+    <Compile Include="Database\Marital_Status.cs" />
+    <Compile Include="Database\Marital_Status_TEMP.cs" />
+    <Compile Include="Database\Mark.cs" />
+    <Compile Include="Database\Marks_TEMP.cs" />
+    <Compile Include="Database\MenuControl.cs" />
+    <Compile Include="Database\MenuControl_old.cs" />
+    <Compile Include="Database\MenuControl_old_TEMP.cs" />
+    <Compile Include="Database\MenuControl_TEMP.cs" />
+    <Compile Include="Database\MenuType.cs" />
+    <Compile Include="Database\MenuType_TEMP.cs" />
+    <Compile Include="Database\Mis_Behavior.cs" />
+    <Compile Include="Database\Mis_Behavior_TEMP.cs" />
+    <Compile Include="Database\Parent.cs" />
+    <Compile Include="Database\Parents_TEMP.cs" />
+    <Compile Include="Database\PayRoll.cs" />
+    <Compile Include="Database\PayRoll_TEMP.cs" />
+    <Compile Include="Database\Period.cs" />
+    <Compile Include="Database\Period_TEMP.cs" />
+    <Compile Include="Database\Permission_Staff.cs" />
+    <Compile Include="Database\Permission_Staff_TEMP.cs" />
+    <Compile Include="Database\Permission_Student.cs" />
+    <Compile Include="Database\Permission_Student_TEMP.cs" />
+    <Compile Include="Database\Prefect.cs" />
+    <Compile Include="Database\Prefect_TEMP.cs" />
+    <Compile Include="Database\Prefect_Type.cs" />
+    <Compile Include="Database\Prefect_Type_TEMP.cs" />
+    <Compile Include="Database\Program.cs" />
+    <Compile Include="Database\Program_TEMP.cs" />
+    <Compile Include="Database\RateType.cs" />
+    <Compile Include="Database\RateType_TEMP.cs" />
+    <Compile Include="Database\Record.cs" />
+    <Compile Include="Database\Record_TEMP.cs" />
+    <Compile Include="Database\Register_Status.cs" />
+    <Compile Include="Database\Register_Status_TEMP.cs" />
+    <Compile Include="Database\Religion.cs" />
+    <Compile Include="Database\Religion_TEMP.cs" />
+    <Compile Include="Database\Role.cs" />
+    <Compile Include="Database\RoleFunction.cs" />
+    <Compile Include="Database\RoleFunction_TEMP.cs" />
+    <Compile Include="Database\ROLEPRIV.cs" />
+    <Compile Include="Database\RolePrivilege.cs" />
+    <Compile Include="Database\RolePrivilege_TEMP.cs" />
+    <Compile Include="Database\Roles_TEMP.cs" />
+    <Compile Include="Database\Route.cs" />
+    <Compile Include="Database\Route_TEMP.cs" />
+    <Compile Include="Database\Schedule_Timetable.cs" />
+    <Compile Include="Database\Schedule_Timetable_TEMP.cs" />
+    <Compile Include="Database\SchoolfeeClassPaymentItem.cs" />
+    <Compile Include="Database\SchoolFeePayItem.cs" />
+    <Compile Include="Database\SchoolfeePayment.cs" />
+    <Compile Include="Database\SchoolPayitemRecord.cs" />
+    <Compile Include="Database\School_Bus.cs" />
+    <Compile Include="Database\School_Bus_TEMP.cs" />
+    <Compile Include="Database\School_Details.cs" />
+    <Compile Include="Database\School_Details_TEMP.cs" />
+    <Compile Include="Database\Session.cs" />
+    <Compile Include="Database\session_TEMP.cs" />
+    <Compile Include="Database\Staff.cs" />
+    <Compile Include="Database\StaffAllowanceSetup.cs" />
+    <Compile Include="Database\StaffAllowanceSetup_TEMP.cs" />
+    <Compile Include="Database\StaffDeduction.cs" />
+    <Compile Include="Database\StaffDeduction_TEMP.cs" />
+    <Compile Include="Database\Staff_Academic.cs" />
+    <Compile Include="Database\Staff_Academic_TEMP.cs" />
+    <Compile Include="Database\Staff_NextOfKin.cs" />
+    <Compile Include="Database\Staff_RefereeData.cs" />
+    <Compile Include="Database\Staff_RefereeData_TEMP.cs" />
+    <Compile Include="Database\Staff_TEMP.cs" />
+    <Compile Include="Database\Staff_Type.cs" />
+    <Compile Include="Database\Staff_Type_TEMP.cs" />
+    <Compile Include="Database\State.cs" />
+    <Compile Include="Database\State_TEMP.cs" />
+    <Compile Include="Database\Student.cs" />
+    <Compile Include="Database\StudentType.cs" />
+    <Compile Include="Database\StudentType_TEMP.cs" />
+    <Compile Include="Database\student_TEMP.cs" />
+    <Compile Include="Database\Subject.cs" />
+    <Compile Include="Database\subject_TEMP.cs" />
+    <Compile Include="Database\tbl_audittrail.cs" />
+    <Compile Include="Database\tbl_CliqBAudit_TEMP.cs" />
+    <Compile Include="Database\Term.cs" />
+    <Compile Include="Database\TerminationSetup.cs" />
+    <Compile Include="Database\TerminationSetup_TEMP.cs" />
+    <Compile Include="Database\TerminationTypeSetup.cs" />
+    <Compile Include="Database\TerminationTypeSetup_TEMP.cs" />
+    <Compile Include="Database\Term_TEMP.cs" />
+    <Compile Include="Database\User.cs" />
+    <Compile Include="Database\Users_TEMP.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
