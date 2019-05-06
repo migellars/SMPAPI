@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPAPI", "SMPAPI\SMPAPI.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{1AADD9C7-956E-4060-B0CC-E0AC44E5CED1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{FB2EA15C-0C8F-45D1-B002-56455BA0E73B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1AADD9C7-956E-4060-B0CC-E0AC44E5CED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AADD9C7-956E-4060-B0CC-E0AC44E5CED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AADD9C7-956E-4060-B0CC-E0AC44E5CED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2EA15C-0C8F-45D1-B002-56455BA0E73B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2EA15C-0C8F-45D1-B002-56455BA0E73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2EA15C-0C8F-45D1-B002-56455BA0E73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2EA15C-0C8F-45D1-B002-56455BA0E73B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

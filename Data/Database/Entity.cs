@@ -28,7 +28,7 @@ namespace Data.Database
 		public virtual DbSet<C_MenuControl_TEMP> C_MenuControl_TEMP { get; set; }
 		public virtual DbSet<C_RolePrivilege> C_RolePrivilege { get; set; }
 		public virtual DbSet<C_RolePrivilege_TEMP> C_RolePrivilege_TEMP { get; set; }
-		public virtual DbSet<Campu> Campus { get; set; }
+		public virtual DbSet<Campus> Campus { get; set; }
 		public virtual DbSet<Campus_TEMP> Campus_TEMP { get; set; }
 		public virtual DbSet<Class> Classes { get; set; }
 		public virtual DbSet<Class_TEMP> Class_TEMP { get; set; }
@@ -458,27 +458,27 @@ namespace Data.Database
 				.Property(e => e.CompanyCode)
 				.IsUnicode(false);
 
-			modelBuilder.Entity<Campu>()
+			modelBuilder.Entity<Campus>()
 				.Property(e => e.Name)
 				.IsUnicode(false);
 
-			modelBuilder.Entity<Campu>()
+			modelBuilder.Entity<Campus>()
 				.Property(e => e.Contact_Person)
 				.IsUnicode(false);
 
-			modelBuilder.Entity<Campu>()
+			modelBuilder.Entity<Campus>()
 				.Property(e => e.Last_Modified_Authid)
 				.IsUnicode(false);
 
-			modelBuilder.Entity<Campu>()
+			modelBuilder.Entity<Campus>()
 				.Property(e => e.Last_Modified_Uid)
 				.IsUnicode(false);
 
-			modelBuilder.Entity<Campu>()
+			modelBuilder.Entity<Campus>()
 				.Property(e => e.Status)
 				.IsUnicode(false);
 
-			modelBuilder.Entity<Campu>()
+			modelBuilder.Entity<Campus>()
 				.Property(e => e.CreatedBy)
 				.IsUnicode(false);
 

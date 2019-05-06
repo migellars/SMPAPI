@@ -6,7 +6,7 @@ namespace Data.Database
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Campu
+    public partial class Campus
     {
         [Key]
         [Column(Order = 0)]

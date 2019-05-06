@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SMPAPI
 {
@@ -9,8 +11,11 @@ namespace SMPAPI
 	{
 		public static void Register(HttpConfiguration config)
 		{
+			EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
+			config.EnableCors(cors);
 			// Web API configuration and services
-
+			config.Formatters.JsonFormatter.SupportedMediaTypes
+				.Add(new MediaTypeHeaderValue("text/html"));
 			// Web API routes
 			config.MapHttpAttributeRoutes();
 
