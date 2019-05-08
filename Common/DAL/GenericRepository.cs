@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Common.DAL
 {
-	public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity :  class
+	public class GenericRepository<TEntity> where TEntity :   class
 	{
 		internal Entity _context;
 		internal DbSet<TEntity> dbSet;
 
 		public GenericRepository(Entity context)
 		{
-			_context = context;
-			dbSet = context.Set<TEntity>();
+			this._context = context;
+			this.dbSet = context.Set<TEntity>();
 		}
-		public  virtual IEnumerable<TEntity> Get(
+		public virtual IEnumerable<TEntity> Get(
 			Expression<Func<TEntity, bool>> filter = null,
 			Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
 			string includeProperties = "")
@@ -39,29 +39,22 @@ namespace Common.DAL
 			}
 			else
 			{
-				return  query.ToList();
+				return query.ToList();
 			}
 		}
 		public virtual TEntity GetByID(object id)
 		{
-			return dbSet.FirstOrDefault();
+			return dbSet.Find(id);
 		}
 		public virtual void Insert(TEntity entity)
 		{
 			dbSet.Add(entity);
 		}
-		public virtual int Count(Expression<Func<TEntity, bool>> predicate)
-		{
-			return _context.Set<TEntity>().Count(predicate);
-		}
 		public virtual void Delete(object id)
 		{
-			TEntity entityToDelete = dbSet.FirstOrDefault();
+			TEntity entityToDelete = dbSet.Find(id);
 			Delete(entityToDelete);
 		}
-
-		
-
 		public virtual void Delete(TEntity entityToDelete)
 		{
 			if (_context.Entry(entityToDelete).State == EntityState.Detached)
@@ -70,115 +63,16 @@ namespace Common.DAL
 			}
 			dbSet.Remove(entityToDelete);
 		}
-		public async Task<TEntity> UpdateAsync(TEntity updated)
-		{
-			throw new NotImplementedException();
-		}
-		public async Task<int> DeleteAsync(TEntity entity)
-		{
-			throw new NotImplementedException();
-		}
-
-		public int Count()
-		{
-			throw new NotImplementedException();
-		}
-
-		public async Task<int> CountAsync()
-		{
-			throw new NotImplementedException();
-		}
-
-		public IEnumerable<TEntity> Filter(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "", int? page = null,
-			int? pageSize = null)
-		{
-			throw new NotImplementedException();
-		}
-
-		public IQueryable<TEntity> FindBy(Expression<Func<TEntity, bool>> predicate)
-		{
-			throw new NotImplementedException();
-		}
-
-		public bool Exist(Expression<Func<TEntity, bool>> predicate)
-		{
-			throw new NotImplementedException();
-		}
-
-		public IQueryable<TEntity> Query()
-		{
-			throw new NotImplementedException();
-		}
-
-		public ICollection<TEntity> GetAll()
-		{
-			return dbSet.ToList();
-		}
-
-		public async Task<ICollection<TEntity>> GetAllAsync()
-		{
-			return await dbSet.ToListAsync();
-		}
-
-		public TEntity GetById(int id)
-		{
-			return dbSet.Find(id);
-		}
-
-		public async Task<TEntity> GetByIdAsync(int id)
-		{
-			return await dbSet.FindAsync(id);
-		}
-
-		public TEntity GetByUniqueId(string id)
-		{
-			return dbSet.Find(id);
-		}
-
-		public async Task<TEntity> GetByUniqueIdAsync(string id)
-		{
-			return await dbSet.FindAsync(id);
-		}
-
-		public TEntity Find(Expression<Func<TEntity, bool>> match)
-		{
-			return dbSet.SingleOrDefault(match);
-		}
-
-		public async Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> match)
-		{
-			return await dbSet.SingleOrDefaultAsync(match);
-		}
-
-		public ICollection<TEntity> FindAll(Expression<Func<TEntity, bool>> match)
-		{
-			return dbSet.ToList();
-		}
-
-		public async Task<ICollection<TEntity>> FindAllAsync(Expression<Func<TEntity, bool>> match)
-		{
-			return await dbSet.ToListAsync();
-		}
-
-		public TEntity Add(TEntity entity)
-		{
-			return dbSet.Add(entity);
-		}
-
-		public async Task<TEntity> AddAsync(TEntity entity)    ///Todo: Implement AddAsync
-		{
-			throw new NotImplementedException();
-		}
-
-		TEntity IGenericRepository<TEntity>.Update(TEntity updated)
-		{
-			throw new NotImplementedException();
-		}
 
 		public virtual void Update(TEntity entityToUpdate)
 		{
 			dbSet.Attach(entityToUpdate);
 			_context.Entry(entityToUpdate).State = EntityState.Modified;
+		}
+
+		public virtual int Count(Expression<Func<TEntity, bool>> predicate)
+		{
+			return _context.Set<TEntity>().Count(predicate);
 		}
 		public void Dispose()
 		{

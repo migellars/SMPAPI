@@ -252,7 +252,7 @@ namespace Common.DAL
 
 		public void Save()
 		{
-			_entity.SaveChangesAsync();
+			_entity.SaveChanges();
 		}
 		private bool _disposed = false;
 		protected virtual void Dispose(bool disposing)
