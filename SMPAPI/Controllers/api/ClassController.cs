@@ -11,45 +11,51 @@ using Data.Database;
 
 namespace SMPAPI.Controllers.api
 {
-    public class BloodGroupController : ApiController
+    public class ClassController : ApiController
     {
-        private Entity _db = new Entity();
-		private UnitOfWork _unitOfWork = new UnitOfWork();
+        private readonly Entity _db;
+        private readonly UnitOfWork _unitOfWork;
 
-        // GET: api/BloodGroup
-        public ICollection<Blood_Group> GetBlood_Group()
+        public ClassController()
         {
-            return _unitOfWork.BloodGroupRepository.Get().ToList();
+            _unitOfWork = new UnitOfWork();
+            _db = new Entity();
         }
 
-        // GET: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> GetBlood_Group(int id)
+        // GET: api/Class
+        public ICollection<Class> GetClasses()
         {
-            Blood_Group bloodGroup = _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            return _unitOfWork.ClassRepository.Get().ToList();
+        }
+
+        // GET: api/Class/5
+        [ResponseType(typeof(Class))]
+        public async Task<IHttpActionResult> GetClass(int id)
+        {
+            Class @class = _unitOfWork.ClassRepository.GetByID(id);
+            if (@class == null)
             {
                 return NotFound();
             }
 
-            return Ok(bloodGroup);
+            return Ok(@class);
         }
 
-        // PUT: api/BloodGroup/5
+        // PUT: api/Class/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutBlood_Group(int id, Blood_Group bloodGroup)
+        public async Task<IHttpActionResult> PutClass(int id, Class @class)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != bloodGroup.ItbId)
+            if (id != @class.ItbId)
             {
                 return BadRequest();
             }
 
-            _db.Entry(bloodGroup).State = EntityState.Modified;
+            _db.Entry(@class).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +63,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!Blood_GroupExists(id))
+                if (!ClassExists(id))
                 {
                     return NotFound();
                 }
@@ -70,16 +76,16 @@ namespace SMPAPI.Controllers.api
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/BloodGroup
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> PostBlood_Group(Blood_Group bloodGroup)
+        // POST: api/Class
+        [ResponseType(typeof(Class))]
+        public async Task<IHttpActionResult> PostClass(Class @class)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _unitOfWork.BloodGroupRepository.Insert(bloodGroup);
+           _unitOfWork.ClassRepository.Insert(@class);
 
             try
             {
@@ -87,7 +93,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateException)
             {
-                if (Blood_GroupExists(bloodGroup.ItbId))
+                if (ClassExists(@class.ItbId))
                 {
                     return Conflict();
                 }
@@ -97,23 +103,23 @@ namespace SMPAPI.Controllers.api
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = bloodGroup.ItbId }, bloodGroup);
+            return CreatedAtRoute("DefaultApi", new { id = @class.ItbId }, @class);
         }
 
-        // DELETE: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> DeleteBlood_Group(int id)
+        // DELETE: api/Class/5
+        [ResponseType(typeof(Class))]
+        public async Task<IHttpActionResult> DeleteClass(int id)
         {
-            Blood_Group bloodGroup =  _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            Class @class = _unitOfWork.ClassRepository.GetByID(id);
+            if (@class == null)
             {
                 return NotFound();
             }
 
-           _unitOfWork.BloodGroupRepository.Delete(bloodGroup);
+            _unitOfWork.ClassRepository.Delete(@class);
             _unitOfWork.Save();
 
-            return Ok(bloodGroup);
+            return Ok(@class);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,9 +131,9 @@ namespace SMPAPI.Controllers.api
             base.Dispose(disposing);
         }
 
-        private bool Blood_GroupExists(int id)
+        private bool ClassExists(int id)
         {
-            return _unitOfWork.BloodGroupRepository.Count(e => e.ItbId == id) > 0;
+            return _unitOfWork.ClassRepository.Count(e => e.ItbId == id) > 0;
         }
     }
 }

@@ -11,45 +11,51 @@ using Data.Database;
 
 namespace SMPAPI.Controllers.api
 {
-    public class BloodGroupController : ApiController
+    public class DayTableController : ApiController
     {
-        private Entity _db = new Entity();
-		private UnitOfWork _unitOfWork = new UnitOfWork();
+        private Entity db;
+        private readonly UnitOfWork _unitOfWork;
 
-        // GET: api/BloodGroup
-        public ICollection<Blood_Group> GetBlood_Group()
+        public DayTableController()
         {
-            return _unitOfWork.BloodGroupRepository.Get().ToList();
+                db = new Entity();
+				_unitOfWork = new UnitOfWork();
         }
 
-        // GET: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> GetBlood_Group(int id)
+        // GET: api/DayTable
+        public ICollection<Day_Table> GetDay_Table()
         {
-            Blood_Group bloodGroup = _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            return _unitOfWork.DayTableRepository.Get().ToList();
+        }
+
+        // GET: api/DayTable/5
+        [ResponseType(typeof(Day_Table))]
+        public async Task<IHttpActionResult> GetDay_Table(int id)
+        {
+            Day_Table day_Table = _unitOfWork.DayTableRepository.GetByID(id);
+            if (day_Table == null)
             {
                 return NotFound();
             }
 
-            return Ok(bloodGroup);
+            return Ok(day_Table);
         }
 
-        // PUT: api/BloodGroup/5
+        // PUT: api/DayTable/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutBlood_Group(int id, Blood_Group bloodGroup)
+        public async Task<IHttpActionResult> PutDay_Table(int id, Day_Table day_Table)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != bloodGroup.ItbId)
+            if (id != day_Table.ItbId)
             {
                 return BadRequest();
             }
 
-            _db.Entry(bloodGroup).State = EntityState.Modified;
+            db.Entry(day_Table).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +63,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!Blood_GroupExists(id))
+                if (!Day_TableExists(id))
                 {
                     return NotFound();
                 }
@@ -70,16 +76,16 @@ namespace SMPAPI.Controllers.api
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/BloodGroup
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> PostBlood_Group(Blood_Group bloodGroup)
+        // POST: api/DayTable
+        [ResponseType(typeof(Day_Table))]
+        public async Task<IHttpActionResult> PostDay_Table(Day_Table day_Table)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _unitOfWork.BloodGroupRepository.Insert(bloodGroup);
+            _unitOfWork.DayTableRepository.Insert(day_Table);
 
             try
             {
@@ -87,7 +93,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateException)
             {
-                if (Blood_GroupExists(bloodGroup.ItbId))
+                if (Day_TableExists(day_Table.ItbId))
                 {
                     return Conflict();
                 }
@@ -97,23 +103,23 @@ namespace SMPAPI.Controllers.api
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = bloodGroup.ItbId }, bloodGroup);
+            return CreatedAtRoute("DefaultApi", new { id = day_Table.ItbId }, day_Table);
         }
 
-        // DELETE: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> DeleteBlood_Group(int id)
+        // DELETE: api/DayTable/5
+        [ResponseType(typeof(Day_Table))]
+        public async Task<IHttpActionResult> DeleteDay_Table(int id)
         {
-            Blood_Group bloodGroup =  _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            Day_Table day_Table = _unitOfWork.DayTableRepository.GetByID(id);
+            if (day_Table == null)
             {
                 return NotFound();
             }
 
-           _unitOfWork.BloodGroupRepository.Delete(bloodGroup);
+            _unitOfWork.DayTableRepository.Delete(day_Table);
             _unitOfWork.Save();
 
-            return Ok(bloodGroup);
+            return Ok(day_Table);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,9 +131,9 @@ namespace SMPAPI.Controllers.api
             base.Dispose(disposing);
         }
 
-        private bool Blood_GroupExists(int id)
+        private bool Day_TableExists(int id)
         {
-            return _unitOfWork.BloodGroupRepository.Count(e => e.ItbId == id) > 0;
+            return _unitOfWork.DayTableRepository.Count(e => e.ItbId == id) > 0;
         }
     }
 }

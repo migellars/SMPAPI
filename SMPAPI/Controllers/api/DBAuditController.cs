@@ -11,45 +11,51 @@ using Data.Database;
 
 namespace SMPAPI.Controllers.api
 {
-    public class BloodGroupController : ApiController
+    public class DBAuditController : ApiController
     {
-        private Entity _db = new Entity();
-		private UnitOfWork _unitOfWork = new UnitOfWork();
+        private Entity db;
+        private readonly UnitOfWork _unitOfWork;
 
-        // GET: api/BloodGroup
-        public ICollection<Blood_Group> GetBlood_Group()
+        public DBAuditController()
         {
-            return _unitOfWork.BloodGroupRepository.Get().ToList();
+            db = new Entity();
+            _unitOfWork = new UnitOfWork();
         }
 
-        // GET: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> GetBlood_Group(int id)
+        // GET: api/DBAudit
+        public ICollection<DBAudit> GetDBAudits()
         {
-            Blood_Group bloodGroup = _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            return _unitOfWork.DbAuditRepository.Get().ToList();
+        }
+
+        // GET: api/DBAudit/5
+        [ResponseType(typeof(DBAudit))]
+        public async Task<IHttpActionResult> GetDBAudit(int id)
+        {
+            DBAudit dBAudit = _unitOfWork.DbAuditRepository.GetByID(id);
+            if (dBAudit == null)
             {
                 return NotFound();
             }
 
-            return Ok(bloodGroup);
+            return Ok(dBAudit);
         }
 
-        // PUT: api/BloodGroup/5
+        // PUT: api/DBAudit/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutBlood_Group(int id, Blood_Group bloodGroup)
+        public async Task<IHttpActionResult> PutDBAudit(int id, DBAudit dBAudit)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != bloodGroup.ItbId)
+            if (id != dBAudit.ItbId)
             {
                 return BadRequest();
             }
 
-            _db.Entry(bloodGroup).State = EntityState.Modified;
+            db.Entry(dBAudit).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +63,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!Blood_GroupExists(id))
+                if (!DBAuditExists(id))
                 {
                     return NotFound();
                 }
@@ -70,16 +76,16 @@ namespace SMPAPI.Controllers.api
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/BloodGroup
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> PostBlood_Group(Blood_Group bloodGroup)
+        // POST: api/DBAudit
+        [ResponseType(typeof(DBAudit))]
+        public async Task<IHttpActionResult> PostDBAudit(DBAudit dBAudit)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _unitOfWork.BloodGroupRepository.Insert(bloodGroup);
+            db.DBAudits.Add(dBAudit);
 
             try
             {
@@ -87,7 +93,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateException)
             {
-                if (Blood_GroupExists(bloodGroup.ItbId))
+                if (DBAuditExists(dBAudit.ItbId))
                 {
                     return Conflict();
                 }
@@ -97,23 +103,23 @@ namespace SMPAPI.Controllers.api
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = bloodGroup.ItbId }, bloodGroup);
+            return CreatedAtRoute("DefaultApi", new { id = dBAudit.ItbId }, dBAudit);
         }
 
-        // DELETE: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> DeleteBlood_Group(int id)
+        // DELETE: api/DBAudit/5
+        [ResponseType(typeof(DBAudit))]
+        public async Task<IHttpActionResult> DeleteDBAudit(int id)
         {
-            Blood_Group bloodGroup =  _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            DBAudit dBAudit = _unitOfWork.DbAuditRepository.GetByID(id);
+            if (dBAudit == null)
             {
                 return NotFound();
             }
 
-           _unitOfWork.BloodGroupRepository.Delete(bloodGroup);
+            _unitOfWork.DbAuditRepository.Delete(dBAudit);
             _unitOfWork.Save();
 
-            return Ok(bloodGroup);
+            return Ok(dBAudit);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,9 +131,9 @@ namespace SMPAPI.Controllers.api
             base.Dispose(disposing);
         }
 
-        private bool Blood_GroupExists(int id)
+        private bool DBAuditExists(int id)
         {
-            return _unitOfWork.BloodGroupRepository.Count(e => e.ItbId == id) > 0;
+            return _unitOfWork.DbAuditRepository.Count(e => e.ItbId == id) > 0;
         }
     }
 }

@@ -11,45 +11,51 @@ using Data.Database;
 
 namespace SMPAPI.Controllers.api
 {
-    public class BloodGroupController : ApiController
+    public class ClubController : ApiController
     {
-        private Entity _db = new Entity();
-		private UnitOfWork _unitOfWork = new UnitOfWork();
+        private readonly Entity _db;
+        private readonly UnitOfWork _unitOfWork;
 
-        // GET: api/BloodGroup
-        public ICollection<Blood_Group> GetBlood_Group()
+        public ClubController()
         {
-            return _unitOfWork.BloodGroupRepository.Get().ToList();
+                _unitOfWork = new UnitOfWork();
+                _db = new Entity();
         }
 
-        // GET: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> GetBlood_Group(int id)
+        // GET: api/Club
+        public ICollection<Club> GetClubs()
         {
-            Blood_Group bloodGroup = _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            return _unitOfWork.ClubRepository.Get().ToList();
+        }
+
+        // GET: api/Club/5
+        [ResponseType(typeof(Club))]
+        public async Task<IHttpActionResult> GetClub(int id)
+        {
+            Club club = _unitOfWork.ClubRepository.GetByID(id);
+            if (club == null)
             {
                 return NotFound();
             }
 
-            return Ok(bloodGroup);
+            return Ok(club);
         }
 
-        // PUT: api/BloodGroup/5
+        // PUT: api/Club/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutBlood_Group(int id, Blood_Group bloodGroup)
+        public async Task<IHttpActionResult> PutClub(int id, Club club)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != bloodGroup.ItbId)
+            if (id != club.ItbId)
             {
                 return BadRequest();
             }
 
-            _db.Entry(bloodGroup).State = EntityState.Modified;
+            _db.Entry(club).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +63,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!Blood_GroupExists(id))
+                if (!ClubExists(id))
                 {
                     return NotFound();
                 }
@@ -70,16 +76,16 @@ namespace SMPAPI.Controllers.api
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/BloodGroup
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> PostBlood_Group(Blood_Group bloodGroup)
+        // POST: api/Club
+        [ResponseType(typeof(Club))]
+        public async Task<IHttpActionResult> PostClub(Club club)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _unitOfWork.BloodGroupRepository.Insert(bloodGroup);
+            _unitOfWork.ClubRepository.Insert(club);
 
             try
             {
@@ -87,7 +93,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateException)
             {
-                if (Blood_GroupExists(bloodGroup.ItbId))
+                if (ClubExists(club.ItbId))
                 {
                     return Conflict();
                 }
@@ -97,23 +103,23 @@ namespace SMPAPI.Controllers.api
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = bloodGroup.ItbId }, bloodGroup);
+            return CreatedAtRoute("DefaultApi", new { id = club.ItbId }, club);
         }
 
-        // DELETE: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> DeleteBlood_Group(int id)
+        // DELETE: api/Club/5
+        [ResponseType(typeof(Club))]
+        public async Task<IHttpActionResult> DeleteClub(int id)
         {
-            Blood_Group bloodGroup =  _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            Club club = _unitOfWork.ClubRepository.GetByID(id);
+            if (club == null)
             {
                 return NotFound();
             }
 
-           _unitOfWork.BloodGroupRepository.Delete(bloodGroup);
+            _unitOfWork.ClubRepository.Delete(club);
             _unitOfWork.Save();
 
-            return Ok(bloodGroup);
+            return Ok(club);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,9 +131,9 @@ namespace SMPAPI.Controllers.api
             base.Dispose(disposing);
         }
 
-        private bool Blood_GroupExists(int id)
+        private bool ClubExists(int id)
         {
-            return _unitOfWork.BloodGroupRepository.Count(e => e.ItbId == id) > 0;
+            return _unitOfWork.ClubRepository.Count(e => e.ItbId == id) > 0;
         }
     }
 }

@@ -436,7 +436,7 @@ namespace Data.Migrations
                 "dbo.ClientProfile",
                 c => new
                     {
-                        ItbId = c.Int(nullable: false),
+                        ItbId = c.Int(nullable: false), 
                         BankCode = c.String(nullable: false, maxLength: 20, unicode: false),
                         BankName = c.String(maxLength: 100, unicode: false),
                         BankAddress = c.String(maxLength: 100, unicode: false),

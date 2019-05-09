@@ -224,6 +224,16 @@
     <Compile Include="Controllers\api\AttendanceStudentController.cs" />
     <Compile Include="Controllers\api\BloodGroupController.cs" />
     <Compile Include="Controllers\api\CampusController.cs" />
+    <Compile Include="Controllers\api\ClassController.cs" />
+    <Compile Include="Controllers\api\ClassFeePayItemController.cs" />
+    <Compile Include="Controllers\api\ClientProfileController.cs" />
+    <Compile Include="Controllers\api\ClubController.cs" />
+    <Compile Include="Controllers\api\ClubMembershipController.cs" />
+    <Compile Include="Controllers\api\ClubOfficerController.cs" />
+    <Compile Include="Controllers\api\CountryController.cs" />
+    <Compile Include="Controllers\api\CurrencyController.cs" />
+    <Compile Include="Controllers\api\DayTableController.cs" />
+    <Compile Include="Controllers\api\DBAuditController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

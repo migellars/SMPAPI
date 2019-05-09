@@ -52,6 +52,7 @@ namespace SMPAPI.Controllers.api
                 return BadRequest();
             }
 
+            
              db.Entry(account_Type).State = EntityState.Modified;
 
             try

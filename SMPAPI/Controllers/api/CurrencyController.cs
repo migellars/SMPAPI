@@ -11,45 +11,51 @@ using Data.Database;
 
 namespace SMPAPI.Controllers.api
 {
-    public class BloodGroupController : ApiController
+    public class CurrencyController : ApiController
     {
-        private Entity _db = new Entity();
-		private UnitOfWork _unitOfWork = new UnitOfWork();
+        private Entity db;
+        private readonly UnitOfWork _unitOfWork;
 
-        // GET: api/BloodGroup
-        public ICollection<Blood_Group> GetBlood_Group()
+        public CurrencyController()
         {
-            return _unitOfWork.BloodGroupRepository.Get().ToList();
+                db = new Entity();
+                _unitOfWork = new UnitOfWork();
         }
 
-        // GET: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> GetBlood_Group(int id)
+        // GET: api/Currency
+        public ICollection<Currency> GetCurrencies()
         {
-            Blood_Group bloodGroup = _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            return _unitOfWork.CurrencyRepository.Get().ToList();
+        }
+
+        // GET: api/Currency/5
+        [ResponseType(typeof(Currency))]
+        public async Task<IHttpActionResult> GetCurrency(int id)
+        {
+            Currency currency = _unitOfWork.CurrencyRepository.GetByID(id);
+            if (currency == null)
             {
                 return NotFound();
             }
 
-            return Ok(bloodGroup);
+            return Ok(currency);
         }
 
-        // PUT: api/BloodGroup/5
+        // PUT: api/Currency/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutBlood_Group(int id, Blood_Group bloodGroup)
+        public async Task<IHttpActionResult> PutCurrency(int id, Currency currency)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != bloodGroup.ItbId)
+            if (id != currency.ItbId)
             {
                 return BadRequest();
             }
 
-            _db.Entry(bloodGroup).State = EntityState.Modified;
+            db.Entry(currency).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +63,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!Blood_GroupExists(id))
+                if (!CurrencyExists(id))
                 {
                     return NotFound();
                 }
@@ -70,16 +76,16 @@ namespace SMPAPI.Controllers.api
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/BloodGroup
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> PostBlood_Group(Blood_Group bloodGroup)
+        // POST: api/Currency
+        [ResponseType(typeof(Currency))]
+        public async Task<IHttpActionResult> PostCurrency(Currency currency)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _unitOfWork.BloodGroupRepository.Insert(bloodGroup);
+            _unitOfWork.CurrencyRepository.Insert(currency);
 
             try
             {
@@ -87,7 +93,7 @@ namespace SMPAPI.Controllers.api
             }
             catch (DbUpdateException)
             {
-                if (Blood_GroupExists(bloodGroup.ItbId))
+                if (CurrencyExists(currency.ItbId))
                 {
                     return Conflict();
                 }
@@ -97,23 +103,23 @@ namespace SMPAPI.Controllers.api
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = bloodGroup.ItbId }, bloodGroup);
+            return CreatedAtRoute("DefaultApi", new { id = currency.ItbId }, currency);
         }
 
-        // DELETE: api/BloodGroup/5
-        [ResponseType(typeof(Blood_Group))]
-        public async Task<IHttpActionResult> DeleteBlood_Group(int id)
+        // DELETE: api/Currency/5
+        [ResponseType(typeof(Currency))]
+        public async Task<IHttpActionResult> DeleteCurrency(int id)
         {
-            Blood_Group bloodGroup =  _unitOfWork.BloodGroupRepository.GetByID(id);
-            if (bloodGroup == null)
+            Currency currency = _unitOfWork.CurrencyRepository.GetByID(id);
+            if (currency == null)
             {
                 return NotFound();
             }
 
-           _unitOfWork.BloodGroupRepository.Delete(bloodGroup);
+            _unitOfWork.CurrencyRepository.Delete(currency);
             _unitOfWork.Save();
 
-            return Ok(bloodGroup);
+            return Ok(currency);
         }
 
         protected override void Dispose(bool disposing)
@@ -125,9 +131,9 @@ namespace SMPAPI.Controllers.api
             base.Dispose(disposing);
         }
 
-        private bool Blood_GroupExists(int id)
+        private bool CurrencyExists(int id)
         {
-            return _unitOfWork.BloodGroupRepository.Count(e => e.ItbId == id) > 0;
+            return _unitOfWork.CurrencyRepository.Count(e => e.ItbId == id) > 0;
         }
     }
 }
