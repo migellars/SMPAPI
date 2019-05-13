@@ -16,8 +16,15 @@ namespace SMPAPI.Controllers.api
     /// </summary>
     public class Account_TypeController : ApiController
     {
-        private Entity db = new Entity();
-        private UnitOfWork _unitOfWork = new UnitOfWork();
+        private readonly Entity _db;
+        private readonly UnitOfWork _unitOfWork;
+
+        public Account_TypeController()
+        {
+                _db = new Entity();
+                _unitOfWork = new UnitOfWork();
+        }
+
 
         // GET: api/Account_Type
         public List<Account_Type> GetAccount_Type()
@@ -53,7 +60,7 @@ namespace SMPAPI.Controllers.api
             }
 
             
-             db.Entry(account_Type).State = EntityState.Modified;
+             _db.Entry(account_Type).State = EntityState.Modified;
 
             try
             {

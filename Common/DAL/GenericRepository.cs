@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
 namespace Common.DAL
 {
@@ -15,8 +14,8 @@ namespace Common.DAL
 
 		public GenericRepository(Entity context)
 		{
-			this._context = context;
-			this.dbSet = context.Set<TEntity>();
+			_context = context;
+			dbSet = context.Set<TEntity>();
 		}
 		public virtual IEnumerable<TEntity> Get(
 			Expression<Func<TEntity, bool>> filter = null,

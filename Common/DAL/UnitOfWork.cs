@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Data.Database;
 
 namespace Common.DAL
@@ -100,7 +96,7 @@ namespace Common.DAL
 		#region
 			public GenericRepository<Account_Type> AccountTypeRepository => accountTypeRepository ?? new GenericRepository<Account_Type>(_entity);
 
-			public GenericRepository<Arm> ArmRepository => this.armRepository ?? new GenericRepository<Arm>(_entity);
+			public GenericRepository<Arm> ArmRepository => armRepository ?? new GenericRepository<Arm>(_entity);
 
 			public GenericRepository<Campus> CampusRepository => campusRepository ?? new GenericRepository<Campus>(_entity);
 
@@ -193,6 +189,9 @@ namespace Common.DAL
 			public GenericRepository<LeaveSetup> LeaveSetupRepository =>
 				leaveSetupRepository ?? new GenericRepository<LeaveSetup>(_entity);
 
+			public GenericRepository<LeaveType> LeaveTypeRepository =>
+				leaveTypeRepository ?? new GenericRepository<LeaveType>(_entity);
+
 			public GenericRepository<LevelSetup> LevelSetupRepository =>
 				levelSetupRepository ?? new GenericRepository<LevelSetup>(_entity);
 
@@ -254,17 +253,17 @@ namespace Common.DAL
 		{
 			_entity.SaveChanges();
 		}
-		private bool _disposed = false;
+		private bool _disposed;
 		protected virtual void Dispose(bool disposing)
 		{
-			if (!this._disposed)
+			if (!_disposed)
 			{
 				if (disposing)
 				{
 					_entity.Dispose();
 				}
 			}
-			this._disposed = true;
+			_disposed = true;
 		}
 
 		public void Dispose()
