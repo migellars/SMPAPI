@@ -9,7 +9,6 @@ namespace Data.Database
     public partial class Event
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
@@ -37,24 +36,12 @@ namespace Data.Database
         [StringLength(50)]
         public string Event_Fee { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SessionId { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TermId { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SchoolId { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CampusId { get; set; }
 
         public DateTime? Last_Modified_Date { get; set; }

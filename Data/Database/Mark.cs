@@ -9,45 +9,23 @@ namespace Data.Database
     public partial class Mark
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
         public int? SchoolId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StudentId { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ClassId { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SubjectId { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SessionId { get; set; }
 
-        [Key]
-        [Column(Order = 5)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TermId { get; set; }
 
-        [Key]
-        [Column(Order = 6)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ArmId { get; set; }
 
-        [Key]
-        [Column(Order = 7)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProgramId { get; set; }
 
         [StringLength(50)]
@@ -68,9 +46,6 @@ namespace Data.Database
         [StringLength(50)]
         public string Exam_Score { get; set; }
 
-        [Key]
-        [Column(Order = 8)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Exam_TypeId { get; set; }
 
         public DateTime? Last_Modified_Date { get; set; }

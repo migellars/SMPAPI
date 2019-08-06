@@ -9,12 +9,10 @@ namespace Data.Database
     public partial class Staff_Type
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 

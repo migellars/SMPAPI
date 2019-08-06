@@ -10,18 +10,13 @@ namespace Data.Database
     public partial class Term
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(50)]
         public string Term_Name { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SessionId { get; set; }
 
         [Column(TypeName = "date")]
@@ -30,9 +25,6 @@ namespace Data.Database
         [Column(TypeName = "date")]
         public DateTime? End_Date { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SchoolId { get; set; }
 
         public DateTime? Last_Modified_Date { get; set; }

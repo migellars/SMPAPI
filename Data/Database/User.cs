@@ -9,17 +9,14 @@ namespace Data.Database
     public partial class User
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(100)]
         public string Name { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(50)]
         public string Username { get; set; }
 
@@ -31,17 +28,13 @@ namespace Data.Database
         [StringLength(100)]
         public string Address { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
+        [Required]
         [StringLength(50)]
         public string Password { get; set; }
 
         [StringLength(300)]
         public string ImageUrl { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Account_TypeId { get; set; }
 
         public DateTime? Last_Modified_Date { get; set; }

@@ -10,50 +10,35 @@ namespace Data.Database
     public partial class SchoolPayitemRecord
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long itbid { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SchoolId { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(100)]
         public string SchoolName { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CampusId { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
+        [Required]
         [StringLength(100)]
-        public string CampusName { get; set; }
+        public string CampussName { get; set; }
 
         [StringLength(50)]
         public string Student_Code { get; set; }
 
-        [Key]
-        [Column(Order = 5)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ParentId { get; set; }
 
-        [Key]
-        [Column(Order = 6)]
+        [Required]
         [StringLength(101)]
         public string ParentName { get; set; }
 
-        [Key]
-        [Column(Order = 7)]
+        [Required]
         [StringLength(50)]
         public string LastName { get; set; }
 
-        [Key]
-        [Column(Order = 8)]
+        [Required]
         [StringLength(50)]
         public string FirstName { get; set; }
 
@@ -63,17 +48,11 @@ namespace Data.Database
         [StringLength(100)]
         public string Home_Address { get; set; }
 
-        [Key]
-        [Column(Order = 9)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CountryId { get; set; }
 
         [StringLength(50)]
         public string CountryName { get; set; }
 
-        [Key]
-        [Column(Order = 10)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StateId { get; set; }
 
         [StringLength(50)]
@@ -85,42 +64,25 @@ namespace Data.Database
         [Column(TypeName = "image")]
         public byte[] Passport { get; set; }
 
-        [Key]
-        [Column(Order = 11)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ArmId { get; set; }
 
-        [Key]
-        [Column(Order = 12)]
+        [Required]
         [StringLength(50)]
         public string Arm { get; set; }
 
-        [Key]
-        [Column(Order = 13)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Student_TypeId { get; set; }
 
         [StringLength(50)]
         public string Student_Type { get; set; }
 
-        [Key]
-        [Column(Order = 14)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ClassId { get; set; }
 
-        [Key]
-        [Column(Order = 15)]
+        [Required]
         [StringLength(50)]
         public string ClassName { get; set; }
 
-        [Key]
-        [Column(Order = 16)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PrefectId { get; set; }
 
-        [Key]
-        [Column(Order = 17)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Prefect_TypeId { get; set; }
 
         [Column(TypeName = "date")]
@@ -129,43 +91,27 @@ namespace Data.Database
         [Column(TypeName = "date")]
         public DateTime? Date_Of_Admission { get; set; }
 
-        [Key]
-        [Column(Order = 18)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int GenderId { get; set; }
 
-        [Key]
-        [Column(Order = 19)]
+        [Required]
         [StringLength(10)]
         public string GenderName { get; set; }
 
-        [Key]
-        [Column(Order = 20)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Phone_No { get; set; }
 
-        [Key]
-        [Column(Order = 21)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProgramId { get; set; }
 
-        [Key]
-        [Column(Order = 22)]
+        [Required]
         [StringLength(50)]
         public string ProgramName { get; set; }
 
-        [Key]
-        [Column(Order = 23)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SessionId { get; set; }
 
-        [Key]
-        [Column(Order = 24)]
+        [Required]
         [StringLength(50)]
         public string SessionName { get; set; }
 
-        [Key]
-        [Column(Order = 25)]
+        [Required]
         [StringLength(20)]
         public string paycode { get; set; }
 
@@ -175,23 +121,14 @@ namespace Data.Database
         [StringLength(1)]
         public string compulsory { get; set; }
 
-        [Key]
-        [Column(Order = 26)]
+        [Required]
         [StringLength(14)]
         public string Compulsorystate { get; set; }
 
-        [Key]
-        [Column(Order = 27)]
         public decimal Amountdue { get; set; }
 
-        [Key]
-        [Column(Order = 28)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Amountpaid { get; set; }
 
-        [Key]
-        [Column(Order = 29)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Lastunpaid { get; set; }
 
         public int? currentyear { get; set; }

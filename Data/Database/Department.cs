@@ -10,12 +10,10 @@ namespace Data.Database
     public partial class Department
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(50)]
         public string Dept_Name { get; set; }
 

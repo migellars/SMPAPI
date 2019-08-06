@@ -10,13 +10,9 @@ namespace Data.Database
     public partial class State
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CountryId { get; set; }
 
         [StringLength(10)]

@@ -10,15 +10,11 @@ namespace Data.Database
     public partial class StaffAllowanceSetup
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
         public int? StaffId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int AllowanceId { get; set; }
 
         [Column(TypeName = "numeric")]

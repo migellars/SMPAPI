@@ -10,16 +10,12 @@ namespace Data.Database
     public partial class Period
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
         [StringLength(50)]
         public string Name { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DayId { get; set; }
 
         public TimeSpan? Start_Time { get; set; }

@@ -9,12 +9,10 @@ namespace Data.Database
     public partial class School_Details
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(100)]
         public string Name { get; set; }
 
@@ -24,19 +22,10 @@ namespace Data.Database
         [StringLength(50)]
         public string Address { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int LGAId { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CountryId { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StateId { get; set; }
 
         [StringLength(50)]

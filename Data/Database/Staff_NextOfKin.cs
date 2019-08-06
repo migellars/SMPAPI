@@ -9,13 +9,9 @@ namespace Data.Database
     public partial class Staff_NextOfKin
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StaffId { get; set; }
 
         [StringLength(50)]
@@ -36,22 +32,13 @@ namespace Data.Database
 
         public int? Kin_MobilePhone { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Kin_MaritalStatusId { get; set; }
 
         [StringLength(50)]
         public string Kin_Relationship { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Kin_CountryId { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Kin_StateId { get; set; }
 
         [StringLength(50)]

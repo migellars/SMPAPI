@@ -9,13 +9,9 @@ namespace Data.Database
     public partial class Staff_RefereeData
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StaffId { get; set; }
 
         [StringLength(50)]
@@ -33,14 +29,8 @@ namespace Data.Database
         [StringLength(250)]
         public string ContactAddress { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CountryId { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StateId { get; set; }
 
         [StringLength(50)]

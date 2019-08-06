@@ -10,16 +10,12 @@ namespace Data.Database
     public partial class LoginAudit
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? ProcessingDate { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserId { get; set; }
 
         [Column(TypeName = "date")]

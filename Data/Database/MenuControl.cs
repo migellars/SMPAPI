@@ -10,12 +10,10 @@ namespace Data.Database
     public partial class MenuControl
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MenuId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(100)]
         public string MenuName { get; set; }
 
@@ -32,8 +30,7 @@ namespace Data.Database
 
         public int? Priority { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(30)]
         public string Status { get; set; }
 

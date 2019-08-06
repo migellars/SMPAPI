@@ -9,41 +9,28 @@ namespace Data.Database
     public partial class Parent
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SchoolId { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(50)]
         public string LastName { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
+        [Required]
         [StringLength(50)]
         public string FirstName { get; set; }
 
         [StringLength(50)]
         public string MiddleName { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
+        [Required]
         [StringLength(50)]
         public string Home_Address { get; set; }
 
-        [Key]
-        [Column(Order = 5)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CountryId { get; set; }
 
-        [Key]
-        [Column(Order = 6)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StateId { get; set; }
 
         [StringLength(50)]
@@ -58,9 +45,6 @@ namespace Data.Database
         [StringLength(50)]
         public string Email { get; set; }
 
-        [Key]
-        [Column(Order = 7)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Mobile_Phone1 { get; set; }
 
         public int? Mobile_Phone2 { get; set; }

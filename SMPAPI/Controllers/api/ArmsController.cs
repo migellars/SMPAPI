@@ -11,7 +11,7 @@ using Data.Database;
 
 namespace SMPAPI.Controllers.api
 {
-    public class ArmsController : ApiController    //Todo: Arms Controller Implement Unit Of Work
+    public class ArmsController : ApiController    
     {
         private Entity db = new Entity();
 		private readonly UnitOfWork _unitOfWork = new UnitOfWork();

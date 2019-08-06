@@ -9,16 +9,12 @@ namespace Data.Database
     public partial class Exam_Type
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
         [StringLength(50)]
         public string Description { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SchoolId { get; set; }
 
         public DateTime? Last_Modified_Date { get; set; }

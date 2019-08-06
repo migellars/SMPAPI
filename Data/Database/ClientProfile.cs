@@ -10,12 +10,10 @@ namespace Data.Database
     public partial class ClientProfile
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(20)]
         public string BankCode { get; set; }
 

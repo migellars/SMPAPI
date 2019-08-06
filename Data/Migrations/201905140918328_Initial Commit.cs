@@ -40,6 +40,141 @@ namespace Data.Migrations
                 .PrimaryKey(t => t.ItbId);
             
             CreateTable(
+                "dbo.AdminUser_TEMP",
+                c => new
+                    {
+                        ItbId = c.Long(nullable: false),
+                        RoleID = c.Int(nullable: false),
+                        LastLogin = c.DateTime(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        IsFirstLogin = c.Boolean(nullable: false),
+                        FailedLogins = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        Username = c.String(maxLength: 50, unicode: false),
+                        Surname = c.String(maxLength: 50, unicode: false),
+                        Firstname = c.String(maxLength: 50, unicode: false),
+                        Email = c.String(maxLength: 150, unicode: false),
+                        Telephone = c.String(maxLength: 50, unicode: false),
+                        CreatedBy = c.String(maxLength: 50, unicode: false),
+                        CreateDate = c.DateTime(),
+                        IsApproved = c.Boolean(),
+                        ApprovedBy = c.Long(),
+                        DateApproved = c.DateTime(),
+                        IsTokenRequired = c.Boolean(),
+                        LimitAmount = c.Decimal(precision: 19, scale: 4),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.ItbId, t.RoleID, t.LastLogin, t.IsActive, t.IsFirstLogin, t.FailedLogins, t.IsDeleted });
+            
+            CreateTable(
+                "dbo.AdminUser_TEMP_TEMP",
+                c => new
+                    {
+                        ItbId = c.Long(nullable: false),
+                        RoleID = c.Int(nullable: false),
+                        LastLogin = c.DateTime(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        IsFirstLogin = c.Boolean(nullable: false),
+                        FailedLogins = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        Username = c.String(maxLength: 50, unicode: false),
+                        Surname = c.String(maxLength: 50, unicode: false),
+                        Firstname = c.String(maxLength: 50, unicode: false),
+                        Email = c.String(maxLength: 150, unicode: false),
+                        Telephone = c.String(maxLength: 50, unicode: false),
+                        CreatedBy = c.String(maxLength: 50, unicode: false),
+                        DateCreated = c.DateTime(),
+                        IsApproved = c.Boolean(),
+                        ApprovedBy = c.Long(),
+                        DateApproved = c.DateTime(),
+                        IsTokenRequired = c.Boolean(),
+                        LimitAmount = c.Decimal(precision: 19, scale: 4),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.ItbId, t.RoleID, t.LastLogin, t.IsActive, t.IsFirstLogin, t.FailedLogins, t.IsDeleted });
+            
+            CreateTable(
+                "dbo.AdminUser",
+                c => new
+                    {
+                        ItbId = c.Long(nullable: false),
+                        RoleID = c.Int(nullable: false),
+                        LastLogin = c.DateTime(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        IsFirstLogin = c.Boolean(nullable: false),
+                        FailedLogins = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        Username = c.String(maxLength: 50, unicode: false),
+                        Surname = c.String(maxLength: 50, unicode: false),
+                        Firstname = c.String(maxLength: 50, unicode: false),
+                        Email = c.String(maxLength: 150, unicode: false),
+                        Telephone = c.String(maxLength: 50, unicode: false),
+                        CreatedBy = c.String(maxLength: 50, unicode: false),
+                        CreateDate = c.DateTime(),
+                        IsApproved = c.Boolean(),
+                        ApprovedBy = c.Long(),
+                        DateApproved = c.DateTime(),
+                        IsTokenRequired = c.Boolean(),
+                        LimitAmount = c.Decimal(precision: 19, scale: 4),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.ItbId, t.RoleID, t.LastLogin, t.IsActive, t.IsFirstLogin, t.FailedLogins, t.IsDeleted });
+            
+            CreateTable(
+                "dbo.AdminUsers_TEMP",
+                c => new
+                    {
+                        ItbId = c.Long(nullable: false),
+                        RoleID = c.Int(nullable: false),
+                        LastLogin = c.DateTime(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        IsFirstLogin = c.Boolean(nullable: false),
+                        FailedLogins = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        Username = c.String(maxLength: 50, unicode: false),
+                        Surname = c.String(maxLength: 50, unicode: false),
+                        Firstname = c.String(maxLength: 50, unicode: false),
+                        Email = c.String(maxLength: 150, unicode: false),
+                        Telephone = c.String(maxLength: 50, unicode: false),
+                        CreatedBy = c.Long(),
+                        DateCreated = c.DateTime(),
+                        IsApproved = c.Boolean(),
+                        ApprovedBy = c.Long(),
+                        DateApproved = c.DateTime(),
+                        IsTokenRequired = c.Boolean(),
+                        LimitAmount = c.Decimal(precision: 19, scale: 4),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.ItbId, t.RoleID, t.LastLogin, t.IsActive, t.IsFirstLogin, t.FailedLogins, t.IsDeleted });
+            
+            CreateTable(
+                "dbo.AdminUsers",
+                c => new
+                    {
+                        ItbId = c.Long(nullable: false),
+                        RoleID = c.Int(nullable: false),
+                        LastLogin = c.DateTime(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        IsFirstLogin = c.Boolean(nullable: false),
+                        FailedLogins = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        Username = c.String(maxLength: 50, unicode: false),
+                        Surname = c.String(maxLength: 50, unicode: false),
+                        Firstname = c.String(maxLength: 50, unicode: false),
+                        Email = c.String(maxLength: 150, unicode: false),
+                        Telephone = c.String(maxLength: 50, unicode: false),
+                        CreatedBy = c.Long(),
+                        DateCreated = c.DateTime(),
+                        IsApproved = c.Boolean(),
+                        ApprovedBy = c.Long(),
+                        DateApproved = c.DateTime(),
+                        IsTokenRequired = c.Boolean(),
+                        LimitAmount = c.Decimal(precision: 19, scale: 4),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.ItbId, t.RoleID, t.LastLogin, t.IsActive, t.IsFirstLogin, t.FailedLogins, t.IsDeleted });
+            
+            CreateTable(
                 "dbo.AllowanceType_TEMP",
                 c => new
                     {
@@ -92,7 +227,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name, t.SchoolId, t.ClassId, t.ProgramId, t.CampusId, t.ClassTeacherId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Arms_TEMP",
@@ -119,10 +254,186 @@ namespace Data.Migrations
                 .PrimaryKey(t => new { t.ItbId, t.Name });
             
             CreateTable(
+                "dbo.AspNetRoles",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(nullable: false, maxLength: 256),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.Id, t.Name });
+            
+            CreateTable(
+                "dbo.AspNetRoles_TEMP",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(nullable: false, maxLength: 256),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.Id, t.Name });
+            
+            CreateTable(
+                "dbo.AspNetUserClaims",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        ClaimType = c.String(),
+                        ClaimValue = c.String(),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.Id, t.UserId });
+            
+            CreateTable(
+                "dbo.AspNetUserClaims_TEMP",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        ClaimType = c.String(),
+                        ClaimValue = c.String(),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.Id, t.UserId });
+            
+            CreateTable(
+                "dbo.AspNetUserLogins",
+                c => new
+                    {
+                        LoginProvider = c.String(nullable: false, maxLength: 128),
+                        ProviderKey = c.String(nullable: false, maxLength: 128),
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId });
+            
+            CreateTable(
+                "dbo.AspNetUserLogins_TEMP",
+                c => new
+                    {
+                        LoginProvider = c.String(nullable: false, maxLength: 128),
+                        ProviderKey = c.String(nullable: false, maxLength: 128),
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId });
+            
+            CreateTable(
+                "dbo.AspNetUserRoles",
+                c => new
+                    {
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        RoleId = c.String(nullable: false, maxLength: 128),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.UserId, t.RoleId });
+            
+            CreateTable(
+                "dbo.AspNetUserRoles_TEMP",
+                c => new
+                    {
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        RoleId = c.String(nullable: false, maxLength: 128),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.UserId, t.RoleId });
+            
+            CreateTable(
+                "dbo.AspNetUsers",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        RoleId = c.Int(nullable: false),
+                        ForcePassword = c.Boolean(nullable: false),
+                        IsApproved = c.Boolean(nullable: false),
+                        LoggedOn = c.Boolean(nullable: false),
+                        InstitutionId = c.Int(nullable: false),
+                        ItbId = c.Int(nullable: false),
+                        EmailConfirmed = c.Boolean(nullable: false),
+                        PhoneNumberConfirmed = c.Boolean(nullable: false),
+                        TwoFactorEnabled = c.Boolean(nullable: false),
+                        LockoutEnabled = c.Boolean(nullable: false),
+                        AccessFailedCount = c.Int(nullable: false),
+                        UserName = c.String(nullable: false, maxLength: 256),
+                        Supervisor = c.Boolean(nullable: false),
+                        LastName = c.String(),
+                        FirstName = c.String(),
+                        LastLoginDate = c.DateTime(),
+                        LastLogoutDate = c.DateTime(),
+                        MobileNo = c.String(),
+                        PasswordExpiryDate = c.DateTime(),
+                        CreateDate = c.DateTime(),
+                        Last_Modified_UID = c.String(),
+                        Last_Auth_UID = c.String(),
+                        Status = c.String(),
+                        RoleName = c.String(),
+                        DeptCode = c.String(),
+                        DeptName = c.String(),
+                        InstitutionName = c.String(),
+                        FullName = c.String(),
+                        EnforcePasswordChangeDays = c.Int(),
+                        LastPasswordChangeDate = c.DateTime(),
+                        CreateUserId = c.String(),
+                        Email = c.String(maxLength: 256),
+                        PasswordHash = c.String(),
+                        SecurityStamp = c.String(),
+                        PhoneNumber = c.String(),
+                        LockoutEndDateUtc = c.DateTime(),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.Id, t.RoleId, t.ForcePassword, t.IsApproved, t.LoggedOn, t.InstitutionId, t.ItbId, t.EmailConfirmed, t.PhoneNumberConfirmed, t.TwoFactorEnabled, t.LockoutEnabled, t.AccessFailedCount, t.UserName, t.Supervisor });
+            
+            CreateTable(
+                "dbo.AspNetUsers_TEMP",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        RoleId = c.Int(nullable: false),
+                        ForcePassword = c.Boolean(nullable: false),
+                        IsApproved = c.Boolean(nullable: false),
+                        LoggedOn = c.Boolean(nullable: false),
+                        InstitutionId = c.Int(nullable: false),
+                        ItbId = c.Int(nullable: false),
+                        EmailConfirmed = c.Boolean(nullable: false),
+                        PhoneNumberConfirmed = c.Boolean(nullable: false),
+                        TwoFactorEnabled = c.Boolean(nullable: false),
+                        LockoutEnabled = c.Boolean(nullable: false),
+                        AccessFailedCount = c.Int(nullable: false),
+                        UserName = c.String(nullable: false, maxLength: 256),
+                        Supervisor = c.Boolean(nullable: false),
+                        LastName = c.String(),
+                        FirstName = c.String(),
+                        LastLoginDate = c.DateTime(),
+                        LastLogoutDate = c.DateTime(),
+                        MobileNo = c.String(),
+                        PasswordExpiryDate = c.DateTime(),
+                        CreateDate = c.DateTime(),
+                        Last_Modified_UID = c.String(),
+                        Last_Auth_UID = c.String(),
+                        Status = c.String(),
+                        RoleName = c.String(),
+                        DeptCode = c.String(),
+                        DeptName = c.String(),
+                        InstitutionName = c.String(),
+                        FullName = c.String(),
+                        EnforcePasswordChangeDays = c.Int(),
+                        LastPasswordChangeDate = c.DateTime(),
+                        CreateUserId = c.String(),
+                        Email = c.String(maxLength: 256),
+                        PasswordHash = c.String(),
+                        SecurityStamp = c.String(),
+                        PhoneNumber = c.String(),
+                        LockoutEndDateUtc = c.DateTime(),
+                        taskid = c.Int(),
+                    })
+                .PrimaryKey(t => new { t.Id, t.RoleId, t.ForcePassword, t.IsApproved, t.LoggedOn, t.InstitutionId, t.ItbId, t.EmailConfirmed, t.PhoneNumberConfirmed, t.TwoFactorEnabled, t.LockoutEnabled, t.AccessFailedCount, t.UserName, t.Supervisor });
+            
+            CreateTable(
                 "dbo.Attendance_Staff",
                 c => new
                     {
-                        ItbId = c.Int(nullable: false),
+                        ItbId = c.Int(nullable: false, identity: true),
                         SchoolId = c.Int(nullable: false),
                         Register_StatusId = c.Int(nullable: false),
                         Reason_For_Absence = c.String(),
@@ -135,7 +446,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.Register_StatusId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Attendance_Staff_TEMP",
@@ -160,14 +471,14 @@ namespace Data.Migrations
                 "dbo.Attendance_Student",
                 c => new
                     {
-                        ItbId = c.Int(nullable: false),
+                        ItbId = c.Int(nullable: false, identity: true),
                         SchoolId = c.Int(nullable: false),
                         StudentId = c.Int(nullable: false),
                         Register_StatusId = c.Int(nullable: false),
-                        SessionId = c.Int(nullable: false),
-                        TermId = c.Int(nullable: false),
                         Reason_For_Absence = c.String(),
                         Attendance_Date = c.DateTime(storeType: "date"),
+                        SessionId = c.Int(nullable: false),
+                        TermId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -176,7 +487,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.StudentId, t.Register_StatusId, t.SessionId, t.TermId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Attendance_Student_TEMP",
@@ -204,7 +515,7 @@ namespace Data.Migrations
                 "dbo.Blood_Group",
                 c => new
                     {
-                        ItbId = c.Int(nullable: false),
+                        ItbId = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 50),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
@@ -214,7 +525,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Blood_Group_TEMP",
@@ -236,12 +547,12 @@ namespace Data.Migrations
                 "dbo.C_MenuControl",
                 c => new
                     {
-                        MenuId = c.Int(nullable: false),
+                        MenuId = c.Int(nullable: false, identity: true),
                         MenuName = c.String(nullable: false, maxLength: 100, unicode: false),
-                        Status = c.String(nullable: false, maxLength: 30, unicode: false),
                         Url = c.String(maxLength: 100, unicode: false),
                         Parent = c.Int(),
                         Priority = c.Int(),
+                        Status = c.String(nullable: false, maxLength: 30, unicode: false),
                         Flag = c.Boolean(),
                         Description = c.String(maxLength: 100, unicode: false),
                         TableName = c.String(maxLength: 60, unicode: false),
@@ -250,7 +561,7 @@ namespace Data.Migrations
                         NoLevel = c.Int(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.MenuId, t.MenuName, t.Status });
+                .PrimaryKey(t => t.MenuId);
             
             CreateTable(
                 "dbo.C_MenuControl_TEMP",
@@ -276,7 +587,7 @@ namespace Data.Migrations
                 "dbo.C_RolePrivilege",
                 c => new
                     {
-                        ItbId = c.Decimal(nullable: false, precision: 19, scale: 0),
+                        ItbId = c.Decimal(nullable: false, precision: 19, scale: 0, identity: true),
                         MenuId = c.Int(nullable: false),
                         RoleId = c.Int(nullable: false),
                         CanCreateNew = c.Boolean(nullable: false),
@@ -289,7 +600,7 @@ namespace Data.Migrations
                         CompanyCode = c.String(maxLength: 20, unicode: false),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.MenuId, t.RoleId, t.CanCreateNew, t.CanEdit, t.CanDelete, t.CanAuthorize });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.C_RolePrivilege_TEMP",
@@ -314,15 +625,15 @@ namespace Data.Migrations
                 "dbo.Campus",
                 c => new
                     {
-                        ItbId = c.Int(nullable: false),
+                        ItbId = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 100, unicode: false),
-                        SchoolId = c.Int(nullable: false),
-                        DivisionId = c.Int(nullable: false),
                         Address = c.String(maxLength: 50),
                         ImageUrl = c.String(maxLength: 300),
                         Contact_Person = c.String(maxLength: 50, unicode: false),
                         Contact_Email = c.String(maxLength: 50),
                         Contact_MobileNo = c.Int(),
+                        SchoolId = c.Int(nullable: false),
+                        DivisionId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -331,10 +642,10 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name, t.SchoolId, t.DivisionId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
-                "dbo.Campus_TEMP",
+                "dbo.Campuss_TEMP",
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
@@ -378,7 +689,7 @@ namespace Data.Migrations
                 "dbo.Class",
                 c => new
                     {
-                        ItbId = c.Int(nullable: false),
+                        ItbId = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 50, unicode: false),
                         SchoolId = c.Int(nullable: false),
                         ProgramId = c.Int(nullable: false),
@@ -390,7 +701,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name, t.SchoolId, t.ProgramId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.ClassFeePayItem",
@@ -409,7 +720,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.PayCode, t.ClassId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.ClientProfile_TEMP",
@@ -436,7 +747,7 @@ namespace Data.Migrations
                 "dbo.ClientProfile",
                 c => new
                     {
-                        ItbId = c.Int(nullable: false), 
+                        ItbId = c.Int(nullable: false),
                         BankCode = c.String(nullable: false, maxLength: 20, unicode: false),
                         BankName = c.String(maxLength: 100, unicode: false),
                         BankAddress = c.String(maxLength: 100, unicode: false),
@@ -451,7 +762,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.BankCode });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Club_Membership",
@@ -474,7 +785,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.ClubId, t.SchoolId, t.ClassId, t.ArmId, t.SessionId, t.TermId, t.ProgramId, t.StudentId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Club_Membership_TEMP",
@@ -507,11 +818,11 @@ namespace Data.Migrations
                         SchoolId = c.Int(nullable: false),
                         ClubId = c.Int(nullable: false),
                         Club_MemebershipId = c.Int(nullable: false),
+                        Position = c.String(maxLength: 50),
                         SessionId = c.Int(nullable: false),
                         StudentId = c.Int(nullable: false),
                         TermId = c.Int(nullable: false),
                         ProgramId = c.Int(nullable: false),
-                        Position = c.String(maxLength: 50),
                         Effecture_Date = c.DateTime(storeType: "date"),
                         Terminal_Date = c.DateTime(storeType: "date"),
                         Last_Modified_Date = c.DateTime(),
@@ -522,7 +833,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.ClubId, t.Club_MemebershipId, t.SessionId, t.StudentId, t.TermId, t.ProgramId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.club_officers_TEMP",
@@ -567,7 +878,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.CampusId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Clubs_TEMP",
@@ -604,7 +915,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Country_Code });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Country_temp",
@@ -628,10 +939,10 @@ namespace Data.Migrations
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
-                        CountryId = c.Int(nullable: false),
                         Currency_Code = c.String(maxLength: 3, unicode: false),
                         Currency_Name = c.String(maxLength: 50),
                         ISO_Code = c.String(maxLength: 5, unicode: false),
+                        CountryId = c.Int(nullable: false),
                         CreateDate = c.DateTime(),
                         CreatedBy = c.String(maxLength: 50, unicode: false),
                         Status = c.String(maxLength: 30, unicode: false),
@@ -640,7 +951,7 @@ namespace Data.Migrations
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.CountryId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Currency_TEMP",
@@ -735,7 +1046,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.EventDateutc, t.EventType, t.TableName, t.RecordId, t.ColumnName });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Deduction_TEMP",
@@ -759,8 +1070,8 @@ namespace Data.Migrations
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
-                        RateTypeId = c.Int(nullable: false),
                         Description = c.String(maxLength: 50, unicode: false),
+                        RateTypeId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -769,7 +1080,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.RateTypeId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Department_TEMP",
@@ -801,7 +1112,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Dept_Name });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Designation_TEMP",
@@ -869,17 +1180,13 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.StateId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Events",
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
-                        SessionId = c.Int(nullable: false),
-                        TermId = c.Int(nullable: false),
-                        SchoolId = c.Int(nullable: false),
-                        CampusId = c.Int(nullable: false),
                         Event_Title = c.String(maxLength: 50, unicode: false),
                         Venue = c.String(maxLength: 50, unicode: false),
                         Description = c.String(),
@@ -889,6 +1196,10 @@ namespace Data.Migrations
                         EndTime = c.Time(precision: 7),
                         Event_Type = c.String(maxLength: 50, unicode: false),
                         Event_Fee = c.String(maxLength: 50, unicode: false),
+                        SessionId = c.Int(nullable: false),
+                        TermId = c.Int(nullable: false),
+                        SchoolId = c.Int(nullable: false),
+                        CampusId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -897,7 +1208,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SessionId, t.TermId, t.SchoolId, t.CampusId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.events_TEMP",
@@ -932,8 +1243,8 @@ namespace Data.Migrations
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
-                        SchoolId = c.Int(nullable: false),
                         Description = c.String(maxLength: 50),
+                        SchoolId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -942,7 +1253,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Exam_Type_TEMP",
@@ -979,7 +1290,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Menu_DayId, t.MenuTypeId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Food_Timetable_TEMP",
@@ -1031,7 +1342,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Gender_Name });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Glclass1",
@@ -1116,12 +1427,12 @@ namespace Data.Migrations
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
-                        Exam_TypeId = c.Int(nullable: false),
-                        SchoolId = c.Int(nullable: false),
                         Code = c.String(maxLength: 20, unicode: false),
                         Description = c.String(maxLength: 50),
                         Grade_Min = c.Int(),
                         Grade_Max = c.Int(),
+                        Exam_TypeId = c.Int(nullable: false),
+                        SchoolId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -1130,7 +1441,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Exam_TypeId, t.SchoolId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Halls",
@@ -1148,7 +1459,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.Hall_Name, t.No_Of_Rooms });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Halls_TEMP",
@@ -1204,7 +1515,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.StaffId, t.LeaveTypeId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.LeaveType_TEMP",
@@ -1298,8 +1609,8 @@ namespace Data.Migrations
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
-                        Name = c.String(nullable: false, maxLength: 50, unicode: false),
                         StateId = c.Int(),
+                        Name = c.String(nullable: false, maxLength: 50, unicode: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -1308,7 +1619,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.LoginAudit_TEMP",
@@ -1335,8 +1646,8 @@ namespace Data.Migrations
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
-                        UserId = c.Int(nullable: false),
                         ProcessingDate = c.DateTime(storeType: "date"),
+                        UserId = c.Int(nullable: false),
                         LoginDate = c.DateTime(storeType: "date"),
                         LogoutDate = c.DateTime(storeType: "date"),
                         MacAddress = c.String(maxLength: 50),
@@ -1348,7 +1659,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.UserId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Marital_Status",
@@ -1364,7 +1675,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Marital_Status_TEMP",
@@ -1387,6 +1698,7 @@ namespace Data.Migrations
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
+                        SchoolId = c.Int(),
                         StudentId = c.Int(nullable: false),
                         ClassId = c.Int(nullable: false),
                         SubjectId = c.Int(nullable: false),
@@ -1394,14 +1706,13 @@ namespace Data.Migrations
                         TermId = c.Int(nullable: false),
                         ArmId = c.Int(nullable: false),
                         ProgramId = c.Int(nullable: false),
-                        Exam_TypeId = c.Int(nullable: false),
-                        SchoolId = c.Int(),
                         CA_Score1 = c.String(maxLength: 50),
                         CA_Score2 = c.String(maxLength: 50),
                         CA_Score3 = c.String(maxLength: 50),
                         CA_Score4 = c.String(maxLength: 50),
                         CA_Score5 = c.String(maxLength: 50),
                         Exam_Score = c.String(maxLength: 50),
+                        Exam_TypeId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -1410,7 +1721,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.StudentId, t.ClassId, t.SubjectId, t.SessionId, t.TermId, t.ArmId, t.ProgramId, t.Exam_TypeId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Marks_TEMP",
@@ -1448,10 +1759,10 @@ namespace Data.Migrations
                     {
                         MenuId = c.Int(nullable: false),
                         MenuName = c.String(nullable: false, maxLength: 100, unicode: false),
-                        Status = c.String(nullable: false, maxLength: 30, unicode: false),
                         Url = c.String(maxLength: 100, unicode: false),
                         Parent = c.Int(),
                         Priority = c.Int(),
+                        Status = c.String(nullable: false, maxLength: 30, unicode: false),
                         Flag = c.Boolean(),
                         Description = c.String(maxLength: 100, unicode: false),
                         TableName = c.String(maxLength: 60, unicode: false),
@@ -1460,7 +1771,7 @@ namespace Data.Migrations
                         NoLevel = c.Int(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.MenuId, t.MenuName, t.Status });
+                .PrimaryKey(t => t.MenuId);
             
             CreateTable(
                 "dbo.MenuControl_old_TEMP",
@@ -1508,12 +1819,12 @@ namespace Data.Migrations
                     {
                         MenuId = c.Int(nullable: false),
                         MenuName = c.String(nullable: false, maxLength: 100, unicode: false),
-                        Status = c.String(nullable: false, maxLength: 30, unicode: false),
                         Controller = c.String(maxLength: 100, unicode: false),
                         menuicon = c.String(maxLength: 100),
                         Url = c.String(maxLength: 100, unicode: false),
                         Parent = c.Int(),
                         Priority = c.Int(),
+                        Status = c.String(nullable: false, maxLength: 30, unicode: false),
                         Flag = c.Boolean(),
                         AppType = c.String(maxLength: 1, unicode: false),
                         ResourceKey = c.String(maxLength: 100, unicode: false),
@@ -1522,7 +1833,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.MenuId, t.MenuName, t.Status });
+                .PrimaryKey(t => t.MenuId);
             
             CreateTable(
                 "dbo.MenuType_TEMP",
@@ -1580,7 +1891,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.ClassId, t.ArmId, t.StudentId, t.ProgramId, t.SessionId, t.TermId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Mis_Behavior_TEMP",
@@ -1616,15 +1927,15 @@ namespace Data.Migrations
                         SchoolId = c.Int(nullable: false),
                         LastName = c.String(nullable: false, maxLength: 50, unicode: false),
                         FirstName = c.String(nullable: false, maxLength: 50, unicode: false),
+                        MiddleName = c.String(maxLength: 50, unicode: false),
                         Home_Address = c.String(nullable: false, maxLength: 50),
                         CountryId = c.Int(nullable: false),
                         StateId = c.Int(nullable: false),
-                        Mobile_Phone1 = c.Int(nullable: false),
-                        MiddleName = c.String(maxLength: 50, unicode: false),
                         Town = c.String(maxLength: 50),
                         Occupation = c.String(maxLength: 50),
                         ImageUrl = c.String(maxLength: 300),
                         Email = c.String(maxLength: 50),
+                        Mobile_Phone1 = c.Int(nullable: false),
                         Mobile_Phone2 = c.Int(),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
@@ -1634,7 +1945,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.LastName, t.FirstName, t.Home_Address, t.CountryId, t.StateId, t.Mobile_Phone1 });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Parents_TEMP",
@@ -1692,10 +2003,10 @@ namespace Data.Migrations
                         ItbId = c.Int(nullable: false),
                         StaffId = c.Int(nullable: false),
                         DeptId = c.Int(nullable: false),
-                        DeductionId = c.Int(nullable: false),
                         Pay_Date = c.DateTime(storeType: "date"),
                         BatchId = c.String(maxLength: 30, unicode: false),
                         Salary = c.Decimal(precision: 22, scale: 2, storeType: "numeric"),
+                        DeductionId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -1704,7 +2015,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.StaffId, t.DeptId, t.DeductionId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Period_TEMP",
@@ -1730,8 +2041,8 @@ namespace Data.Migrations
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
-                        DayId = c.Int(nullable: false),
                         Name = c.String(maxLength: 50, unicode: false),
+                        DayId = c.Int(nullable: false),
                         Start_Time = c.Time(precision: 7),
                         End_Time = c.Time(precision: 7),
                         Last_Modified_Date = c.DateTime(),
@@ -1742,7 +2053,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.DayId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Permission_Staff",
@@ -1764,7 +2075,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.StaffId, t.Permission_Sought });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Permission_Staff_TEMP",
@@ -1813,7 +2124,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.ClassId, t.ArmId, t.StudentId, t.ProgramId, t.SessionId, t.TermId, t.Permission_Sought });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Permission_Student_TEMP",
@@ -1908,7 +2219,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.CampusId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Program_TEMP",
@@ -1935,8 +2246,8 @@ namespace Data.Migrations
                     {
                         ItbId = c.Int(nullable: false),
                         Program_Name = c.String(nullable: false, maxLength: 50),
-                        SchoolId = c.Int(nullable: false),
                         Program_Code = c.String(maxLength: 20),
+                        SchoolId = c.Int(nullable: false),
                         No_Of_Term = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
@@ -1946,7 +2257,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Program_Name, t.SchoolId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.RateType_TEMP",
@@ -2026,7 +2337,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Register_Status_TEMP",
@@ -2074,7 +2385,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.RoleFunction_TEMP",
@@ -2134,7 +2445,7 @@ namespace Data.Migrations
                         DateCreated = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.MenuId, t.RoleId, t.CanCreateNew, t.CanEdit, t.CanDelete, t.CanAuthorize });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.ROLEPRIV",
@@ -2216,7 +2527,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.CampusId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Schedule_Timetable",
@@ -2240,7 +2551,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.ClassId, t.ArmId, t.SessionId, t.TermId, t.PeriodId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Schedule_Timetable_TEMP",
@@ -2272,8 +2583,8 @@ namespace Data.Migrations
                     {
                         ItbId = c.Int(nullable: false),
                         SchoolId = c.Int(nullable: false),
-                        RouteId = c.Int(nullable: false),
                         Name = c.String(maxLength: 50, unicode: false),
+                        RouteId = c.Int(nullable: false),
                         Driver_Name = c.String(maxLength: 100, unicode: false),
                         Driver_Phone_No = c.String(maxLength: 20, unicode: false),
                         Price = c.String(maxLength: 50),
@@ -2285,7 +2596,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.RouteId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.School_Bus_TEMP",
@@ -2314,11 +2625,11 @@ namespace Data.Migrations
                     {
                         ItbId = c.Int(nullable: false),
                         Name = c.String(nullable: false, maxLength: 100),
+                        ImageUrl = c.String(maxLength: 300),
+                        Address = c.String(maxLength: 50),
                         LGAId = c.Int(nullable: false),
                         CountryId = c.Int(nullable: false),
                         StateId = c.Int(nullable: false),
-                        ImageUrl = c.String(maxLength: 300),
-                        Address = c.String(maxLength: 50),
                         Town = c.String(maxLength: 50),
                         Contact_Email = c.String(maxLength: 50),
                         Contact_PhoneNo = c.Int(),
@@ -2335,7 +2646,7 @@ namespace Data.Migrations
                         currentsession = c.Int(),
                         currentterm = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name, t.LGAId, t.CountryId, t.StateId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.School_Details_TEMP",
@@ -2391,13 +2702,13 @@ namespace Data.Migrations
                     {
                         ItbId = c.Int(nullable: false),
                         PayCode = c.String(nullable: false, maxLength: 20, unicode: false),
-                        Taxable = c.Boolean(nullable: false),
-                        RefPayCode = c.String(nullable: false, maxLength: 20, unicode: false),
                         PayItemDesc = c.String(maxLength: 350, unicode: false),
                         Compulsory = c.String(maxLength: 1, fixedLength: true, unicode: false),
+                        Taxable = c.Boolean(nullable: false),
                         PaymentFrequency = c.String(maxLength: 1, fixedLength: true, unicode: false),
                         CalculationBasis = c.String(maxLength: 1, fixedLength: true, unicode: false),
                         Rate = c.Decimal(precision: 18, scale: 2, storeType: "numeric"),
+                        RefPayCode = c.String(nullable: false, maxLength: 20, unicode: false),
                         GLAcctNo = c.String(maxLength: 20, unicode: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
@@ -2407,7 +2718,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.PayCode, t.Taxable, t.RefPayCode });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.SchoolfeePayment",
@@ -2444,20 +2755,30 @@ namespace Data.Migrations
                         SchoolId = c.Int(nullable: false),
                         SchoolName = c.String(nullable: false, maxLength: 100),
                         CampusId = c.Int(nullable: false),
-                        CampusName = c.String(nullable: false, maxLength: 100, unicode: false),
+                        CampussName = c.String(nullable: false, maxLength: 100, unicode: false),
+                        Student_Code = c.String(maxLength: 50),
                         ParentId = c.Int(nullable: false),
                         ParentName = c.String(nullable: false, maxLength: 101, unicode: false),
                         LastName = c.String(nullable: false, maxLength: 50, unicode: false),
                         FirstName = c.String(nullable: false, maxLength: 50, unicode: false),
+                        MiddleName = c.String(maxLength: 50, unicode: false),
+                        Home_Address = c.String(maxLength: 100),
                         CountryId = c.Int(nullable: false),
+                        CountryName = c.String(maxLength: 50),
                         StateId = c.Int(nullable: false),
+                        StateName = c.String(maxLength: 50),
+                        Town = c.String(maxLength: 50),
+                        Passport = c.Binary(storeType: "image"),
                         ArmId = c.Int(nullable: false),
                         Arm = c.String(nullable: false, maxLength: 50, unicode: false),
                         Student_TypeId = c.Int(nullable: false),
+                        Student_Type = c.String(maxLength: 50, unicode: false),
                         ClassId = c.Int(nullable: false),
                         ClassName = c.String(nullable: false, maxLength: 50, unicode: false),
                         PrefectId = c.Int(nullable: false),
                         Prefect_TypeId = c.Int(nullable: false),
+                        Date_Of_Brith = c.DateTime(storeType: "date"),
+                        Date_Of_Admission = c.DateTime(storeType: "date"),
                         GenderId = c.Int(nullable: false),
                         GenderName = c.String(nullable: false, maxLength: 10, unicode: false),
                         Phone_No = c.Int(nullable: false),
@@ -2466,27 +2787,17 @@ namespace Data.Migrations
                         SessionId = c.Int(nullable: false),
                         SessionName = c.String(nullable: false, maxLength: 50, unicode: false),
                         paycode = c.String(nullable: false, maxLength: 20, unicode: false),
+                        payitemdesc = c.String(maxLength: 350, unicode: false),
+                        compulsory = c.String(maxLength: 1, fixedLength: true, unicode: false),
                         Compulsorystate = c.String(nullable: false, maxLength: 14, unicode: false),
                         Amountdue = c.Decimal(nullable: false, precision: 22, scale: 2),
                         Amountpaid = c.Int(nullable: false),
                         Lastunpaid = c.Int(nullable: false),
-                        Student_Code = c.String(maxLength: 50),
-                        MiddleName = c.String(maxLength: 50, unicode: false),
-                        Home_Address = c.String(maxLength: 100),
-                        CountryName = c.String(maxLength: 50),
-                        StateName = c.String(maxLength: 50),
-                        Town = c.String(maxLength: 50),
-                        Passport = c.Binary(storeType: "image"),
-                        Student_Type = c.String(maxLength: 50, unicode: false),
-                        Date_Of_Brith = c.DateTime(storeType: "date"),
-                        Date_Of_Admission = c.DateTime(storeType: "date"),
-                        payitemdesc = c.String(maxLength: 350, unicode: false),
-                        compulsory = c.String(maxLength: 1, fixedLength: true, unicode: false),
                         currentyear = c.Int(),
                         currentterm = c.Int(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.itbid, t.SchoolId, t.SchoolName, t.CampusId, t.CampusName, t.ParentId, t.ParentName, t.LastName, t.FirstName, t.CountryId, t.StateId, t.ArmId, t.Arm, t.Student_TypeId, t.ClassId, t.ClassName, t.PrefectId, t.Prefect_TypeId, t.GenderId, t.GenderName, t.Phone_No, t.ProgramId, t.ProgramName, t.SessionId, t.SessionName, t.paycode, t.Compulsorystate, t.Amountdue, t.Amountpaid, t.Lastunpaid });
+                .PrimaryKey(t => t.itbid);
             
             CreateTable(
                 "dbo.session_TEMP",
@@ -2524,7 +2835,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name, t.SchoolId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Staff_Academic",
@@ -2544,7 +2855,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.StaffId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Staff_Academic_TEMP",
@@ -2572,9 +2883,6 @@ namespace Data.Migrations
                     {
                         ItbId = c.Int(nullable: false),
                         StaffId = c.Int(nullable: false),
-                        Kin_MaritalStatusId = c.Int(nullable: false),
-                        Kin_CountryId = c.Int(nullable: false),
-                        Kin_StateId = c.Int(nullable: false),
                         Kin_LastName = c.String(maxLength: 50, unicode: false),
                         Kin_FirstName = c.String(maxLength: 50, unicode: false),
                         Kin_MiddleName = c.String(maxLength: 50, unicode: false),
@@ -2582,7 +2890,10 @@ namespace Data.Migrations
                         Kin_HomePhone = c.Int(),
                         Kin_WorkPhone = c.Int(),
                         Kin_MobilePhone = c.Int(),
+                        Kin_MaritalStatusId = c.Int(nullable: false),
                         Kin_Relationship = c.String(maxLength: 50, unicode: false),
+                        Kin_CountryId = c.Int(nullable: false),
+                        Kin_StateId = c.Int(nullable: false),
                         Kin_City = c.String(maxLength: 50, unicode: false),
                         Kin_ContactAddress = c.String(maxLength: 50),
                         Last_Modified_Date = c.DateTime(),
@@ -2593,7 +2904,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.StaffId, t.Kin_MaritalStatusId, t.Kin_CountryId, t.Kin_StateId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Staff_RefereeData",
@@ -2601,13 +2912,13 @@ namespace Data.Migrations
                     {
                         ItbId = c.Int(nullable: false),
                         StaffId = c.Int(nullable: false),
-                        CountryId = c.Int(nullable: false),
-                        StateId = c.Int(nullable: false),
                         Title = c.String(maxLength: 50, unicode: false),
                         LastName = c.String(maxLength: 60, unicode: false),
                         FirstName = c.String(maxLength: 60, unicode: false),
                         MiddleName = c.String(maxLength: 60, unicode: false),
                         ContactAddress = c.String(maxLength: 250, unicode: false),
+                        CountryId = c.Int(nullable: false),
+                        StateId = c.Int(nullable: false),
                         City = c.String(maxLength: 50, unicode: false),
                         Email = c.String(maxLength: 50, unicode: false),
                         MobilePhone = c.Int(),
@@ -2624,7 +2935,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.StaffId, t.CountryId, t.StateId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Staff_RefereeData_TEMP",
@@ -2714,7 +3025,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Staff_Type_TEMP",
@@ -2755,8 +3066,8 @@ namespace Data.Migrations
                 c => new
                     {
                         ItbId = c.Int(nullable: false),
-                        AllowanceId = c.Int(nullable: false),
                         StaffId = c.Int(),
+                        AllowanceId = c.Int(nullable: false),
                         Amount = c.Decimal(precision: 22, scale: 2, storeType: "numeric"),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
@@ -2766,7 +3077,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.AllowanceId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.StaffDeduction_TEMP",
@@ -2810,7 +3121,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.DeductionId, t.StaffId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Staff",
@@ -2821,20 +3132,18 @@ namespace Data.Migrations
                         CampusId = c.Int(nullable: false),
                         LastName = c.String(nullable: false, maxLength: 50, unicode: false),
                         FirstName = c.String(nullable: false, maxLength: 50, unicode: false),
+                        MiddleName = c.String(maxLength: 50, unicode: false),
+                        Staff_Code = c.String(maxLength: 50, unicode: false),
                         Address = c.String(nullable: false, maxLength: 50),
                         CountryId = c.Int(nullable: false),
                         StateId = c.Int(nullable: false),
-                        Blood_GroupId = c.Int(nullable: false),
-                        Mobile_Phone1 = c.Int(nullable: false),
-                        GenderId = c.Int(nullable: false),
-                        LevelSetupId = c.Int(nullable: false),
-                        LeaveTypeId = c.Int(nullable: false),
-                        MiddleName = c.String(maxLength: 50, unicode: false),
-                        Staff_Code = c.String(maxLength: 50, unicode: false),
                         ImageUrl = c.String(maxLength: 300),
                         Date_Of_Birth = c.DateTime(storeType: "date"),
                         Date_Of_Appointment = c.DateTime(storeType: "date"),
+                        Blood_GroupId = c.Int(nullable: false),
+                        Mobile_Phone1 = c.Int(nullable: false),
                         Mobile_Phone2 = c.Int(),
+                        GenderId = c.Int(nullable: false),
                         Email = c.String(maxLength: 50),
                         Marital_StatusId = c.Int(),
                         DesignationId = c.Int(),
@@ -2845,6 +3154,8 @@ namespace Data.Migrations
                         Position = c.String(maxLength: 50, unicode: false),
                         ProgramId = c.Int(),
                         SubjectId = c.Int(),
+                        LevelSetupId = c.Int(nullable: false),
+                        LeaveTypeId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -2853,7 +3164,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.CampusId, t.LastName, t.FirstName, t.Address, t.CountryId, t.StateId, t.Blood_GroupId, t.Mobile_Phone1, t.GenderId, t.LevelSetupId, t.LeaveTypeId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.State_TEMP",
@@ -2889,7 +3200,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.CountryId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.student_TEMP",
@@ -2938,29 +3249,29 @@ namespace Data.Migrations
                         ItbId = c.Int(nullable: false),
                         SchoolId = c.Int(nullable: false),
                         CampusId = c.Int(nullable: false),
+                        Student_Code = c.String(maxLength: 50),
                         ParentId = c.Int(nullable: false),
                         LastName = c.String(nullable: false, maxLength: 50, unicode: false),
                         FirstName = c.String(nullable: false, maxLength: 50, unicode: false),
+                        MiddleName = c.String(maxLength: 50, unicode: false),
+                        Home_Address = c.String(maxLength: 100),
                         CountryId = c.Int(nullable: false),
                         StateId = c.Int(nullable: false),
+                        Town = c.String(maxLength: 50),
+                        Passport = c.Binary(storeType: "image"),
                         ArmId = c.Int(nullable: false),
                         Student_TypeId = c.Int(nullable: false),
                         ClassId = c.Int(nullable: false),
                         PrefectId = c.Int(nullable: false),
                         Prefect_TypeId = c.Int(nullable: false),
+                        Date_Of_Brith = c.DateTime(storeType: "date"),
+                        Date_Of_Admission = c.DateTime(storeType: "date"),
                         GenderId = c.Int(nullable: false),
                         Phone_No = c.Int(nullable: false),
                         ProgramId = c.Int(nullable: false),
                         SessionId = c.Int(nullable: false),
                         Is_Parent_Or_Guaidian = c.String(nullable: false, maxLength: 1, fixedLength: true, unicode: false),
                         Blood_GroupId = c.Int(nullable: false),
-                        Student_Code = c.String(maxLength: 50),
-                        MiddleName = c.String(maxLength: 50, unicode: false),
-                        Home_Address = c.String(maxLength: 100),
-                        Town = c.String(maxLength: 50),
-                        Passport = c.Binary(storeType: "image"),
-                        Date_Of_Brith = c.DateTime(storeType: "date"),
-                        Date_Of_Admission = c.DateTime(storeType: "date"),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -2969,7 +3280,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.SchoolId, t.CampusId, t.ParentId, t.LastName, t.FirstName, t.CountryId, t.StateId, t.ArmId, t.Student_TypeId, t.ClassId, t.PrefectId, t.Prefect_TypeId, t.GenderId, t.Phone_No, t.ProgramId, t.SessionId, t.Is_Parent_Or_Guaidian, t.Blood_GroupId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.StudentType_TEMP",
@@ -3030,9 +3341,9 @@ namespace Data.Migrations
                         ItbId = c.Int(nullable: false),
                         Subject_Name = c.String(nullable: false, maxLength: 50, unicode: false),
                         SchoolId = c.Int(nullable: false),
+                        SubjectCode = c.String(maxLength: 20),
                         CampusId = c.Int(nullable: false),
                         ProgramId = c.Int(nullable: false),
-                        SubjectCode = c.String(maxLength: 20),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -3041,7 +3352,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Subject_Name, t.SchoolId, t.CampusId, t.ProgramId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.tbl_audittrail",
@@ -3133,7 +3444,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.StaffId, t.TermTypeId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.TerminationTypeSetup_TEMP",
@@ -3174,9 +3485,9 @@ namespace Data.Migrations
                         ItbId = c.Int(nullable: false),
                         Term_Name = c.String(nullable: false, maxLength: 50, unicode: false),
                         SessionId = c.Int(nullable: false),
-                        SchoolId = c.Int(nullable: false),
                         Start_Date = c.DateTime(storeType: "date"),
                         End_Date = c.DateTime(storeType: "date"),
+                        SchoolId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -3185,7 +3496,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Term_Name, t.SessionId, t.SchoolId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Users",
@@ -3194,12 +3505,12 @@ namespace Data.Migrations
                         ItbId = c.Int(nullable: false),
                         Name = c.String(nullable: false, maxLength: 100, unicode: false),
                         Username = c.String(nullable: false, maxLength: 50),
-                        Password = c.String(nullable: false, maxLength: 50),
-                        Account_TypeId = c.Int(nullable: false),
                         Email = c.String(maxLength: 50),
                         Phone_No = c.Int(),
                         Address = c.String(maxLength: 100),
+                        Password = c.String(nullable: false, maxLength: 50),
                         ImageUrl = c.String(maxLength: 300),
+                        Account_TypeId = c.Int(nullable: false),
                         Last_Modified_Date = c.DateTime(),
                         Last_Modified_Authid = c.String(maxLength: 50, unicode: false),
                         Last_Modified_Uid = c.String(maxLength: 50, unicode: false),
@@ -3208,7 +3519,7 @@ namespace Data.Migrations
                         CreateDate = c.DateTime(),
                         taskid = c.Int(),
                     })
-                .PrimaryKey(t => new { t.ItbId, t.Name, t.Username, t.Password, t.Account_TypeId });
+                .PrimaryKey(t => t.ItbId);
             
             CreateTable(
                 "dbo.Users_TEMP",
@@ -3378,7 +3689,7 @@ namespace Data.Migrations
             DropTable("dbo.ClassFeePayItem");
             DropTable("dbo.Class");
             DropTable("dbo.Class_TEMP");
-            DropTable("dbo.Campus_TEMP");
+            DropTable("dbo.Campuss_TEMP");
             DropTable("dbo.Campus");
             DropTable("dbo.C_RolePrivilege_TEMP");
             DropTable("dbo.C_RolePrivilege");
@@ -3390,10 +3701,25 @@ namespace Data.Migrations
             DropTable("dbo.Attendance_Student");
             DropTable("dbo.Attendance_Staff_TEMP");
             DropTable("dbo.Attendance_Staff");
+            DropTable("dbo.AspNetUsers_TEMP");
+            DropTable("dbo.AspNetUsers");
+            DropTable("dbo.AspNetUserRoles_TEMP");
+            DropTable("dbo.AspNetUserRoles");
+            DropTable("dbo.AspNetUserLogins_TEMP");
+            DropTable("dbo.AspNetUserLogins");
+            DropTable("dbo.AspNetUserClaims_TEMP");
+            DropTable("dbo.AspNetUserClaims");
+            DropTable("dbo.AspNetRoles_TEMP");
+            DropTable("dbo.AspNetRoles");
             DropTable("dbo.Arms_TEMP");
             DropTable("dbo.Arms");
             DropTable("dbo.AllowanceType");
             DropTable("dbo.AllowanceType_TEMP");
+            DropTable("dbo.AdminUsers");
+            DropTable("dbo.AdminUsers_TEMP");
+            DropTable("dbo.AdminUser");
+            DropTable("dbo.AdminUser_TEMP_TEMP");
+            DropTable("dbo.AdminUser_TEMP");
             DropTable("dbo.Account_Type_TEMP");
             DropTable("dbo.Account_Type");
         }

@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.3.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -62,10 +61,25 @@
   <ItemGroup>
     <Compile Include="Database\Account_Type.cs" />
     <Compile Include="Database\Account_Type_TEMP.cs" />
+    <Compile Include="Database\AdminUser.cs" />
+    <Compile Include="Database\AdminUser1.cs" />
+    <Compile Include="Database\AdminUsers_TEMP.cs" />
+    <Compile Include="Database\AdminUser_TEMP.cs" />
+    <Compile Include="Database\AdminUser_TEMP_TEMP.cs" />
     <Compile Include="Database\AllowanceType.cs" />
     <Compile Include="Database\AllowanceType_TEMP.cs" />
     <Compile Include="Database\Arm.cs" />
     <Compile Include="Database\Arms_TEMP.cs" />
+    <Compile Include="Database\AspNetRole.cs" />
+    <Compile Include="Database\AspNetRoles_TEMP.cs" />
+    <Compile Include="Database\AspNetUser.cs" />
+    <Compile Include="Database\AspNetUserClaim.cs" />
+    <Compile Include="Database\AspNetUserClaims_TEMP.cs" />
+    <Compile Include="Database\AspNetUserLogin.cs" />
+    <Compile Include="Database\AspNetUserLogins_TEMP.cs" />
+    <Compile Include="Database\AspNetUserRole.cs" />
+    <Compile Include="Database\AspNetUserRoles_TEMP.cs" />
+    <Compile Include="Database\AspNetUsers_TEMP.cs" />
     <Compile Include="Database\Attendance_Staff.cs" />
     <Compile Include="Database\Attendance_Staff_TEMP.cs" />
     <Compile Include="Database\Attendance_Student.cs" />
@@ -220,9 +234,9 @@
     <Compile Include="Database\Term_TEMP.cs" />
     <Compile Include="Database\User.cs" />
     <Compile Include="Database\Users_TEMP.cs" />
-    <Compile Include="Migrations\201905060630328_Initial Commit.cs" />
-    <Compile Include="Migrations\201905060630328_Initial Commit.Designer.cs">
-      <DependentUpon>201905060630328_Initial Commit.cs</DependentUpon>
+    <Compile Include="Migrations\201905140918328_Initial Commit.cs" />
+    <Compile Include="Migrations\201905140918328_Initial Commit.Designer.cs">
+      <DependentUpon>201905140918328_Initial Commit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -239,8 +253,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905060630328_Initial Commit.resx">
-      <DependentUpon>201905060630328_Initial Commit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905140918328_Initial Commit.resx">
+      <DependentUpon>201905140918328_Initial Commit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -248,7 +262,6 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
 </Project>

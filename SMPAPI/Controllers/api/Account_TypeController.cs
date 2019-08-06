@@ -47,7 +47,7 @@ namespace SMPAPI.Controllers.api
 
         // PUT: api/Account_Type/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutAccount_Type(int id, Account_Type account_Type)
+        public IHttpActionResult PutAccount_Type(int id, Account_Type account_Type)
         {
             if (!ModelState.IsValid)
             {
@@ -59,8 +59,8 @@ namespace SMPAPI.Controllers.api
                 return BadRequest();
             }
 
-            
-             _db.Entry(account_Type).State = EntityState.Modified;
+
+            _db.Entry(account_Type).State = EntityState.Modified;
 
             try
             {
@@ -78,7 +78,7 @@ namespace SMPAPI.Controllers.api
                 }
             }
 
-            return  StatusCode(HttpStatusCode.NoContent);
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         // POST: api/Account_Type

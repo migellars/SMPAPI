@@ -9,7 +9,7 @@ namespace Common.DAL
 			private  readonly Entity _entity = new Entity();
 			private GenericRepository<Account_Type> accountTypeRepository;
 			private GenericRepository<Arm> armRepository;
-			private GenericRepository<Campus> campusRepository;
+			private GenericRepository<Campus> CampussRepository;
 			private  GenericRepository<AllowanceType> allowanceTypeRepository;
 			private  GenericRepository<Attendance_Staff> attendanceStaffRepository;
 			private  GenericRepository<Attendance_Student> attendanceStudentRepository;
@@ -98,7 +98,7 @@ namespace Common.DAL
 
 			public GenericRepository<Arm> ArmRepository => armRepository ?? new GenericRepository<Arm>(_entity);
 
-			public GenericRepository<Campus> CampusRepository => campusRepository ?? new GenericRepository<Campus>(_entity);
+			public GenericRepository<Campus> CampusRepository => CampusRepository ?? new GenericRepository<Campus>(_entity);
 
 			public GenericRepository<AllowanceType> AllowanceTypeRepository =>
 				allowanceTypeRepository ?? new GenericRepository<AllowanceType>(_entity);
@@ -244,15 +244,47 @@ namespace Common.DAL
 			public GenericRepository<Register_Status> RegisterStatusRepository =>
 				registerStatusRepository ?? new GenericRepository<Register_Status>(_entity);
 
-			public GenericRepository<Religion> ReligionRepository =>
-				religionRepository ?? new GenericRepository<Religion>(_entity);
+		public GenericRepository<Religion> ReligionRepository =>
+			religionRepository ?? new GenericRepository<Religion>(_entity);
 
-		#endregion
+		public GenericRepository<Role> RoleRepository => roleRepository ?? new GenericRepository<Role>(_entity);
 
-		public void Save()
+		public GenericRepository<RoleFunction> RoleFunctionRepository =>
+			roleFunctionRepository ?? new GenericRepository<RoleFunction>(_entity);
+
+		public GenericRepository<ROLEPRIV> RolePrivRepository =>
+			rolePrivRepository ?? new GenericRepository<ROLEPRIV>(_entity);
+
+		public GenericRepository<RolePrivilege> RolePrivilegeRepository =>
+			rolePrivilegeRepository ?? new GenericRepository<RolePrivilege>(_entity);
+
+		public GenericRepository<Route> RouteRepository =>
+		    routeRepository ?? new GenericRepository<Route>(_entity);
+
+	    public GenericRepository<Schedule_Timetable> ScheduleTimetableRepository => 
+	       scheduleTimeTableRepository ?? new GenericRepository<Schedule_Timetable>(_entity);
+
+	    public GenericRepository<School_Bus> SchoolBusRepository =>
+	        schoolBusRepository ?? new GenericRepository<School_Bus>(_entity);
+
+	    public GenericRepository<School_Details> SchoolDetailsRepository =>
+	        schoolDetailsRepository ?? new GenericRepository<School_Details>(_entity);
+
+
+
+
+
+
+
+
+
+        #endregion
+
+        public void Save()
 		{
 			_entity.SaveChanges();
 		}
+
 		private bool _disposed;
 		protected virtual void Dispose(bool disposing)
 		{

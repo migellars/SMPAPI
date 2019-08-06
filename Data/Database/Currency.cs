@@ -10,7 +10,6 @@ namespace Data.Database
     public partial class Currency
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
@@ -23,9 +22,6 @@ namespace Data.Database
         [StringLength(5)]
         public string ISO_Code { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CountryId { get; set; }
 
         public DateTime? CreateDate { get; set; }

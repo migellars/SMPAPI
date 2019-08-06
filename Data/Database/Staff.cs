@@ -10,27 +10,18 @@ namespace Data.Database
     public partial class Staff
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SchoolId { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CampusId { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
+        [Required]
         [StringLength(50)]
         public string LastName { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
+        [Required]
         [StringLength(50)]
         public string FirstName { get; set; }
 
@@ -40,19 +31,12 @@ namespace Data.Database
         [StringLength(50)]
         public string Staff_Code { get; set; }
 
-        [Key]
-        [Column(Order = 5)]
+        [Required]
         [StringLength(50)]
         public string Address { get; set; }
 
-        [Key]
-        [Column(Order = 6)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CountryId { get; set; }
 
-        [Key]
-        [Column(Order = 7)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StateId { get; set; }
 
         [StringLength(300)]
@@ -64,21 +48,12 @@ namespace Data.Database
         [Column(TypeName = "date")]
         public DateTime? Date_Of_Appointment { get; set; }
 
-        [Key]
-        [Column(Order = 8)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Blood_GroupId { get; set; }
 
-        [Key]
-        [Column(Order = 9)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Mobile_Phone1 { get; set; }
 
         public int? Mobile_Phone2 { get; set; }
 
-        [Key]
-        [Column(Order = 10)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int GenderId { get; set; }
 
         [StringLength(50)]
@@ -105,14 +80,8 @@ namespace Data.Database
 
         public int? SubjectId { get; set; }
 
-        [Key]
-        [Column(Order = 11)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int LevelSetupId { get; set; }
 
-        [Key]
-        [Column(Order = 12)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int LeaveTypeId { get; set; }
 
         public DateTime? Last_Modified_Date { get; set; }

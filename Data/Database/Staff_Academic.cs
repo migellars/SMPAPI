@@ -9,13 +9,9 @@ namespace Data.Database
     public partial class Staff_Academic
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StaffId { get; set; }
 
         [StringLength(200)]

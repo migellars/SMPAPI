@@ -10,12 +10,10 @@ namespace Data.Database
     public partial class Gender
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(10)]
         public string Gender_Name { get; set; }
 

@@ -10,18 +10,13 @@ namespace Data.Database
     public partial class ClassFeePayItem
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(20)]
         public string PayCode { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ClassId { get; set; }
 
         public decimal? DAYStudentAmount { get; set; }

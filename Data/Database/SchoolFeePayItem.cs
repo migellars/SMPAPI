@@ -10,12 +10,10 @@ namespace Data.Database
     public partial class SchoolFeePayItem
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(20)]
         public string PayCode { get; set; }
 
@@ -25,8 +23,6 @@ namespace Data.Database
         [StringLength(1)]
         public string Compulsory { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
         public bool Taxable { get; set; }
 
         [StringLength(1)]
@@ -38,8 +34,7 @@ namespace Data.Database
         [Column(TypeName = "numeric")]
         public decimal? Rate { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
+        [Required]
         [StringLength(20)]
         public string RefPayCode { get; set; }
 

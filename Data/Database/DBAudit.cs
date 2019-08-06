@@ -10,31 +10,23 @@ namespace Data.Database
     public partial class DBAudit
     {
         [Key]
-        [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ItbId { get; set; }
 
-        [Key]
-        [Column(Order = 1, TypeName = "date")]
+        [Column(TypeName = "date")]
         public DateTime EventDateutc { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(1)]
         public string EventType { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
+        [Required]
         [StringLength(100)]
         public string TableName { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RecordId { get; set; }
 
-        [Key]
-        [Column(Order = 5)]
+        [Required]
         [StringLength(100)]
         public string ColumnName { get; set; }
 
