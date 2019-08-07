@@ -270,6 +270,9 @@ namespace Common.DAL
 	    public GenericRepository<School_Details> SchoolDetailsRepository =>
 	        schoolDetailsRepository ?? new GenericRepository<School_Details>(_entity);
 
+        public GenericRepository<Session> SessionRepository =>
+            sessionRepository ?? new GenericRepository<Session>(_entity);
+
 
 
 
